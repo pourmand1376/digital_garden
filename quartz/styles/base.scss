@@ -645,9 +645,3 @@ iframe.pdf {
   transition: width 0.2s ease;
   z-index: 9999;
 }
-
-html[lang^="he"] *,
-html[lang^="fa"] *,
-html[lang^="ar"] * {
-  direction: rtl;
-}
