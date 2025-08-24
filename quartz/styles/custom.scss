@@ -1,3 +1,10 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+// RTL language support for Hebrew, Persian/Farsi, and Arabic
+html[lang^="he"] *,
+html[lang^="fa"] *,
+html[lang^="ar"] * {
+  direction: rtl;
+}
