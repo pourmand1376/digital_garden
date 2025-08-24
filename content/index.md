@@ -1,12 +1,7 @@
 ---
-title: Welcome to Quartz
+title: به مغز من خوش آمدید!
 ---
+اینجا مغز من هست! 
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
-
-What should I do here?
-
-چطوری فارسی نمایش داده میشه؟
 
 [[test areas]]
