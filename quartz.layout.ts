@@ -26,46 +26,24 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    // Component.DesktopOnly(Component.Sidenotes()),
-    Component.DesktopOnly(Component.Graph()),
-    Component.DesktopOnly(Component.Backlinks()),
-
-    Component.MobileOnly(Component.PageTitle()),
-    // Component.MobileOnly(Component.Search()),
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
+      ],
+    }),
+    Component.Explorer(),
   ],
   right: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.Darkmode()),
-    Component.DesktopOnly(Component.Search()),
-    // Component.DesktopOnly(Component.Explorer({
-    //   filterFn: (node) => {
-    //     // exclude files with the tag "explorerexclude"
-    //     return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
-    //   },
-    // })),
+    Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.Backlinks()),
-  ],
-}
-
-export const indexPageLayout: PageLayout = {
-  beforeBody: [
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
-  ],
-  left: [
-    Component.DesktopOnly(Component.Graph()),
-    Component.DesktopOnly(Component.Backlinks()),
-    Component.MobileOnly(Component.PageTitle()),
-    Component.MobileOnly(Component.Darkmode()),
-  ],
-  right: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.Darkmode()),
-    Component.DesktopOnly(Component.Search()),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.Backlinks()),
+    Component.Backlinks(),
   ],
 }
 
@@ -73,14 +51,18 @@ export const indexPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.MobileOnly(Component.PageTitle()),
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer(),
   ],
-  right: [
-    Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.Darkmode()),
-    Component.Search(),
-    Component.DesktopOnly(Component.Explorer({
-      filterFn: (node) => node.slugSegment !== "explorerexclude",
-    })),
-  ],
+  right: [],
 }
