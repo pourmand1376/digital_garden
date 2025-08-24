@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} perces olvasás`,
     },
+    footnotes: {
+      title: "Lábjegyzetek",
+    },
   },
   pages: {
     rss: {

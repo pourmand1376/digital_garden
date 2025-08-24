@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min čtení`,
     },
+    footnotes: {
+      title: "Poznámky pod čarou",
+    },
   },
   pages: {
     rss: {

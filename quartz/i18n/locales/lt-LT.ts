@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min skaitymo`,
     },
+    footnotes: {
+      title: "Išnašos",
+    },
   },
   pages: {
     rss: {

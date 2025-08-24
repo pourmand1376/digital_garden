@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `Es llegeix en ${minutes} min`,
     },
+    footnotes: {
+      title: "Notes a peu de pàgina",
+    },
   },
   pages: {
     rss: {

@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `อ่านราว ${minutes} นาที`,
     },
+    footnotes: {
+      title: "เชิงอ้าง",
+    },
   },
   pages: {
     rss: {

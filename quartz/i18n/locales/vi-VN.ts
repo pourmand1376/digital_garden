@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `đọc ${minutes} phút`,
     },
+    footnotes: {
+      title: "Chú thích",
+    },
   },
   pages: {
     rss: {

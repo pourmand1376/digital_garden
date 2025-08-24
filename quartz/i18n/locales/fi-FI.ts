@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min lukuaika`,
     },
+    footnotes: {
+      title: "Alaviitteet",
+    },
   },
   pages: {
     rss: {

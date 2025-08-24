@@ -64,6 +64,9 @@ export default {
             ? `دقيقتان للقراءة`
             : `${minutes} دقائق للقراءة`,
     },
+    footnotes: {
+      title: "الحواشي",
+    },
   },
   pages: {
     rss: {

@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} dakika okuma süresi`,
     },
+    footnotes: {
+      title: "Dipnotlar",
+    },
   },
   pages: {
     rss: {
