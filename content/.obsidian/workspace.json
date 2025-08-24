@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0-Inbox-Online/docs/پست های لینکدین/product view in machine learning.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "product view in machine learning"
+              "title": "index"
             }
           }
         ]
@@ -167,19 +167,21 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "cde7264c5d15cef1",
   "lastOpenFiles": [
-    "0-Inbox-Online/docs/چک‌لیست‌ها/چک لیست اجاره خانه.md",
-    "0-Inbox-Online/docs/چک‌لیست‌ها/چک لیست پارک.md",
-    "0-Inbox-Online/docs/چک‌لیست‌ها/چک لیست استخر.md",
+    "0-Inbox-Online/index.md",
+    "index.md",
+    "0-Inbox-Online/چک‌لیست‌ها/چک لیست اجاره خانه.md",
+    "0-Inbox-Online/پست های لینکدین/product view in machine learning.md",
+    "0-Inbox-Online/چک‌لیست‌ها/چک لیست پارک.md",
+    "0-Inbox-Online/چک‌لیست‌ها/چک لیست استخر.md",
     "Templates/1-new-notes.md",
-    "0-Inbox-Online/docs/پست های لینکدین/product view in machine learning.md",
     "0-Inbox-Online/collaboration of notes.md",
     "0-Inbox-Online/Untitled.md",
-    "0-Inbox-Online/index.md",
     "10-19-Inputs-Online/test input.md",
     "0-Inbox-Online/docs/index.md",
     "0-Inbox-Online/پلتفرم‌های یادگیری ماشین.md",
@@ -191,7 +193,6 @@
     "60-69-Archive-Online/60-Attachments",
     "Templates",
     "0-Inbox-Online/استراحت کار ذهنی.md",
-    "index.md",
     "0-Inbox-Online/docs/assets/fonts/Shabnam/Shabnam-Thin.woff2",
     "0-Inbox-Online/docs/assets/fonts/Shabnam/Shabnam-Thin.ttf",
     "0-Inbox-Online/docs/assets/fonts/Shabnam/Shabnam-Regular.woff2",
@@ -200,12 +201,12 @@
     "0-Inbox-Online/docs/assets/fonts/Shabnam/Shabnam-Medium.ttf",
     "0-Inbox-Online/docs/assets/fonts/Shabnam/Shabnam-Light.woff2",
     "0-Inbox-Online/docs/assets/fonts/Shabnam/Shabnam-Light.ttf",
-    "0-Inbox-Online/docs/کتاب‌ها/آسیب‌های نخبگی - دکتر رنانی.md",
-    "0-Inbox-Online/docs/کامنت‌های من/کامنت پروژه LLM - باسلام.md",
-    "0-Inbox-Online/docs/کامنت‌های من/پروژه مدل ذهنی.md",
-    "0-Inbox-Online/docs/چک‌لیست‌ها/چک لیست مسافرت.md",
-    "0-Inbox-Online/docs/چک‌لیست‌ها/چک لیست ماشین قبل سفر.md",
-    "0-Inbox-Online/docs/ویدئوهای یوتیوب/هیوریستیک‌های تصمیم‌گیری.md",
-    "0-Inbox-Online/docs/ویدئوهای یوتیوب/مصاحبه ناوال با جو روگان.md"
+    "0-Inbox-Online/کتاب‌ها/آسیب‌های نخبگی - دکتر رنانی.md",
+    "0-Inbox-Online/کامنت‌های من/کامنت پروژه LLM - باسلام.md",
+    "0-Inbox-Online/کامنت‌های من/پروژه مدل ذهنی.md",
+    "0-Inbox-Online/چک‌لیست‌ها/چک لیست مسافرت.md",
+    "0-Inbox-Online/چک‌لیست‌ها/چک لیست ماشین قبل سفر.md",
+    "0-Inbox-Online/ویدئوهای یوتیوب/هیوریستیک‌های تصمیم‌گیری.md",
+    "0-Inbox-Online/ویدئوهای یوتیوب/مصاحبه ناوال با جو روگان.md"
   ]
 }
