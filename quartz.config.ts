@@ -13,7 +13,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "goatcounter",
+      websiteId: "aprd-notes",
     },
     locale: "fa-IR",
     baseUrl: "notes.aprd.ir",
