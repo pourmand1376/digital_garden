@@ -37,18 +37,18 @@ export const sharedPageComponents: SharedLayout = {
       direction: "column",
     }),  
 
-    // Component.Comments({
-    //   provider: 'giscus',
-    //   options: {
-    //     repo: 'fardm/ifard-blog',
-    //     repoId: 'R_kgDOOrIIqw',
-    //     category: 'Announcements',
-    //     categoryId: 'DIC_kwDOOrIIq84CtqXu',
-    //     lang: 'fa',
-    //     mapping: 'pathname',
-    //     inputPosition: 'top',
-    //   }
-    // }),
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        repo: 'amir-pourmand/quartz',
+        repoId: 'R_kgDOPjileA',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOPjileM4Cui6P',
+        lang: 'fa',
+        mapping: 'pathname',
+        inputPosition: 'top',
+      }
+    }),
   ],
   footer: 
   Component.Footer({
