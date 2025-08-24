@@ -8,3 +8,6 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+content/.obsidian/workspace
+content/.obsidian/workspace.json
+content/.obsidian/workspace-mobile.json
