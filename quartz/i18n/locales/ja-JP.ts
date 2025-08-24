@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min read`,
     },
+    footnotes: {
+      title: "脚注",
+    },
   },
   pages: {
     rss: {

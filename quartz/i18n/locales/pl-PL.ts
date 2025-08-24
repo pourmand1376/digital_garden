@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min. czytania `,
     },
+    footnotes: {
+      title: "Przypisy",
+    },
   },
   pages: {
     rss: {

@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} minuti`,
     },
+    footnotes: {
+      title: "Note a piè di pagina",
+    },
   },
   pages: {
     rss: {

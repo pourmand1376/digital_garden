@@ -60,6 +60,9 @@ export default {
       readingTime: ({ minutes }) =>
         minutes === 1 ? "1 minuut leestijd" : `${minutes} minuten leestijd`,
     },
+    footnotes: {
+      title: "Voetnoten",
+    },
   },
   pages: {
     rss: {

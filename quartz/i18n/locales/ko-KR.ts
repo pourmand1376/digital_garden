@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min read`,
     },
+    footnotes: {
+      title: "각주",
+    },
   },
   pages: {
     rss: {

@@ -60,6 +60,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `время чтения ~${minutes} мин.`,
     },
+    footnotes: {
+      title: "Примечания",
+    },
   },
   pages: {
     rss: {

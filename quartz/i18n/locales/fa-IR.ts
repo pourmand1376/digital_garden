@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `زمان تقریبی مطالعه: ${minutes} دقیقه`,
     },
+    footnotes: {
+      title: "پاورقی‌ها",
+    },
   },
   pages: {
     rss: {

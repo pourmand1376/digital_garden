@@ -59,6 +59,9 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `Se lee en ${minutes} min`,
     },
+    footnotes: {
+      title: "Notas al pie",
+    },
   },
   pages: {
     rss: {
