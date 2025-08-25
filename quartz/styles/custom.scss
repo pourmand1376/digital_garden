@@ -66,7 +66,7 @@ code {
 	direction: ltr !important;
 }
 
-/* Sticky navbar at top */
+/* Sticky navbar at very top */
 .page-header {
   position: sticky !important;
   top: 0 !important;
@@ -76,9 +76,28 @@ code {
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   padding: 1rem 0 !important;
+  margin: 0 !important;
   margin-bottom: 1rem !important;
 }
 
 .page-header header {
   margin: 0 !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+/* Make navbar font smaller */
+.page-header h1 {
+  font-size: 1.2rem !important;
+}
+
+/* Remove top margin from page to make navbar truly at top */
+.page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#quartz-root.page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }

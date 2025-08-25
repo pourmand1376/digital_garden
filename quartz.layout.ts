@@ -13,10 +13,8 @@ export const sharedPageComponents: SharedLayout = {
           components: [
             { Component: Component.Search() },
             { Component: Component.Darkmode() },
-            // { Component: Component.MobileOnly(Component.Explorer()), },
           ],
         }), 
-
         },
       ],
     }),  
