@@ -65,3 +65,20 @@ div.search.mobile-only {
 code { 
 	direction: ltr !important;
 }
+
+/* Sticky navbar at top */
+.page-header {
+  position: sticky !important;
+  top: 0 !important;
+  background-color: var(--light) !important;
+  border-bottom: 1px solid var(--lightgray) !important;
+  z-index: 999 !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  padding: 1rem 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+.page-header header {
+  margin: 0 !important;
+}
