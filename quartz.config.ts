@@ -17,7 +17,7 @@ const config: QuartzConfig = {
       websiteId: "aprd-notes",
     },
     locale: "fa-IR",
-    baseUrl: "notes.aprd.ir",
+    baseUrl: "apourmand.ir",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
