@@ -25,10 +25,10 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.Flex({
       components: [
-        { 
-          Component: Component.Backlinks(),
-          align: "start",
-        },
+        // { 
+        //   Component: Component.Backlinks(),
+        //   align: "start",
+        // },
         { 
           Component: Component.TagList(),
           align: "start",
