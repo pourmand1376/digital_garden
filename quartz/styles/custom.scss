@@ -208,4 +208,28 @@
     blockquote.transclude > :is(h1, h2, h3, h4, h5, h6):nth-child(1) {
         display: none;
     }
+
+
+// کوچک کردن تایتل صفحه برای فیت شدن همیشگی
+    .page-title {
+        font-size: 1.3rem !important; // کمتر از 1.5rem پیشفرض
+    }
+
+    @media (max-width: 1200px) {
+        .page-title {
+            font-size: 1.2rem !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 1.1rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .page-title {
+            font-size: 1rem !important;
+        }
+    }
     
