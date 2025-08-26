@@ -1,0 +1,6 @@
+---
+description: try to do minimal changes with no so many changes to files except styles/custom.scss or quartz.config.ts or quartz.layout.ts. I don't want other files to change as it might break in future releases when I update. 
+globs:
+alwaysApply: true
+---
+
