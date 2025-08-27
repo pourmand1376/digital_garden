@@ -1,12 +1,23 @@
+---
+title: چک لیست مسافرت
+aliases:
+created: 2025-08-27 23:31:12
+tags:
+draft: false
+comments: true
+status:
+---
+
+
+[[Index - Checklist|چک لیست]]
+
 چک لیست ماشین قبل سفر  
 
-[چک لیست ماشین قبل سفر](چک%20لیست%20ماشین%20قبل%20سفر.md)
+[checklist - car - trip](checklist%20-%20car%20-%20trip.md)
 [https://carstan.ir/106380/](https://carstan.ir/106380/)  
   
 چک لیست وسایل سفر  
 [https://www.alibaba.ir/mag/checklist-travel-tick/](https://www.alibaba.ir/mag/checklist-travel-tick/)  
-
-[[TravelCheckList.pdf]]
   
 چک لیست اقدامات قبل از ترک منزل  
 [https://www.bamarah.com/blog/post/2634/checklist-travel-tick](https://www.bamarah.com/blog/post/2634/checklist-travel-tick)
@@ -328,3 +339,4 @@
 - بستن شیر اصلی گاز و قطع کلیدهای برق
 - قطع کردن کنتور برق (در صورت امکان - چون یخچال هست)
 - بستن فلکه آب
+

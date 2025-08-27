@@ -1,5 +1,7 @@
 [
   "templater-obsidian",
   "obsidian-git",
-  "omnisearch"
+  "omnisearch",
+  "obsidian-auto-link-title",
+  "callout-manager"
 ]
