@@ -68,6 +68,7 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.ContentMeta({ showReadingTime: false, showComma: false }),
       condition: (page) => page.fileData.slug !== "index",
     }),
+    Component.Breadcrumbs(),
     Component.MobileOnly(Component.TableOfContents()),
   ],
   left: [
