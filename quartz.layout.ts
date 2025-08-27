@@ -69,7 +69,7 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.Breadcrumbs({
-      rootName: "خانه"
+      rootName: "خانه",
     }),
     Component.MobileOnly(Component.TableOfContents()),
   ],
