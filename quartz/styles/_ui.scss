@@ -1,0 +1,302 @@
+// beforeBody
+    // navbar
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: var(--bg); 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.120); 
+        padding: 0.8rem;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    header > div {
+        width: 90%;
+        max-width: 850px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+
+    // page title | avatar
+        .page-title {
+            position: relative;
+            border-bottom: none;
+            font-size: 1.5rem;
+        
+            a:first-child {
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 1.4em;
+                height: 1.4em;
+                margin-left: 0.3rem;
+                vertical-align: middle;
+                background-image: url("/static/avatar.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: var(--secondary);
+                border-radius: 100%;
+            }
+            &:hover::before {
+                background-color: var(--tertiary);
+            }
+            }
+        }
+
+        @media (max-width: 1510px) {
+            .page-title {      
+                a:first-child {
+                &::before {
+                    display: inline-block;
+                    width: 1.1em;
+                    height: 1.1em;
+                    margin-left: 0.2em;
+                }
+                }
+            }
+        }
+
+        // دارک مود
+        .darkmode {
+            vertical-align: middle;
+            }
+
+// pageBody
+    //page top
+    .page-top {
+        background-color: var(--bg);
+        border: solid var(--lightgray);
+        border-width: 1px;
+        border-radius: 0.5rem;
+        margin-top: 4rem !important;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 800px) {
+        .page>#quartz-body .page-top {
+            margin-top: 1rem !important;
+            padding: 1rem !important;
+        }
+    }
+
+
+    // page header
+        .page-header {
+            margin-top: 0rem !important;
+        }
+
+    // article
+        .article-title {
+            margin: 1rem 0;
+        }
+
+        @media not (min-width: 1200px) {
+            .page>#quartz-body {
+                padding: 0 0.3rem;
+            }
+        }
+
+    // footnotes
+    .footnotes {
+        border-top: none;
+        margin: 3rem 0;
+        background-color: transparent;
+    }
+
+    h2#footnote-label{
+        visibility: hidden;
+    }
+    
+    h2#footnote-label::after{
+        content: "پانوشت‌ها";
+        visibility: visible;
+        display: block;
+        direction: rtl !important;
+        font-size: 1.4rem;
+        border-bottom: 1px solid var(--lightgray);     
+        color: var(--darkgray);             
+    }
+
+// afterBody
+    // backlinks & tag list
+    div:has(> div > div.backlinks) {
+        border: solid 1px var(--lightgray);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        background-color: var(--bg);
+        margin-top: 3rem;
+
+    }
+
+    // backlinks
+        .backlinks{
+
+        }
+
+        .backlinks>h3 {
+            color: var(--darkgray);
+            font-size: 1.4rem;
+            // border-bottom: 1px solid var(--lightgray);      
+        }
+
+        ul.overflow:after,ol.overflow:after {
+            display: none;
+        }
+
+    // tags
+    .tags {
+        margin-right: -2.5rem;
+    }
+
+    // div:has(> ul.tags)::before {
+    //     content: "تگ‌ها";
+    //     visibility: visible;
+    //     display: block;
+    //     direction: rtl !important;
+    //     font-family: var(--headerFont);
+    //     font-weight: bold;
+    //     font-size: 1.4rem;
+    //     color: var(--darkgray);       
+    // }
+
+    // Comments
+        .giscus {
+            border: solid 1px var(--lightgray);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            background-color: var(--bg);
+            margin-top: 3rem;
+        }
+
+// sidebar
+
+    .sidebar {
+        padding: 4rem 2rem 2rem !important;
+    }
+
+    @media (max-width: 800px) {
+        .sidebar {
+            padding: 0 !important;
+        }
+    }
+
+    @media not (min-width: 1200px) {
+        .page>#quartz-body .sidebar.right {
+            flex-direction: column;
+        }
+    }
+
+    // Table of Contents
+    .toc {
+        border-radius: 5px;
+        border: 1px solid var(--lightgray);
+        background-color: var(--bg);
+        padding: 12px; 
+        font-size: 0.9rem;
+
+    }
+    
+    .depth-1 {
+        border-right: solid 1px var(--lightgray);
+        padding-right: 1rem;
+    }
+
+    @media (max-width: 1510px) {
+        .mobile-only.toc {
+            display: block;
+        }
+    }
+
+    // Explorer
+    @media (min-width: 800px) {
+        .explorer {
+            border-radius: 5px;
+            border: 1px solid var(--lightgray);
+            background-color: var(--bg);
+            padding: 12px; 
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .explorer {
+            direction: ltr;
+        }
+    }
+    
+    // Graph view
+    .graph-outer {
+        background-color: var(--bg);
+        margin: 0 !important;
+    }
+    
+    .graph > h3 {
+        display: none;
+    }
+
+    @media (max-width: 800px) {
+        .graph {
+            margin-top: 3rem !important;
+        }
+    }
+
+    // recent notes
+    .recent-notes {
+        border-radius: 5px;
+        border: 1px solid var(--lightgray);
+        background-color: var(--bg);
+        padding: 12px; 
+    }
+
+    .recent-notes>ul.recent-ul {
+        margin-right: -2.5rem;
+    }
+
+    .recent-notes .desc h3 {
+        font-size: 0.9rem;
+    }
+    
+    .recent-notes .section {
+        font-size: 0.9rem;
+    }
+
+// Footer
+
+    footer {
+        border: solid 1px var(--lightgray);
+        border-radius: 0.5rem;
+        padding: 0.3rem 1rem 0;
+        box-sizing: border-box;
+        background-color: var(--bg);
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        opacity: 0.9;
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            justify-content: center;
+            gap: 0.5em;
+        }
+    }
+
+// tags or folders page
+div.page-listing ul.section-ul {
+    margin-right: -2.5rem;
+}

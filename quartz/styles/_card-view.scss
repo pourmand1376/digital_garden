@@ -1,0 +1,225 @@
+// حالت اول: گرید
+
+    // استایل پایه
+    .card-g {
+        tr {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #b5b5b526;
+            background-color: #b5b5b518;
+            border-radius: 8px;
+            font-size: 0.9em;
+            line-height: 1.5em;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .table-container>table>* {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .table-container>table {
+            margin: 0;
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+            padding: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .table-container>table td ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .table-container>table td li {
+            display: inline-block;
+            background-color: var(--lightgray);
+            padding: 0px 10px;
+            border-radius: 24px;
+            margin: 2px;
+            font-size: 0.9em;
+        }
+
+        .table-container>table td img {
+            margin: 0;
+
+            
+        }
+
+        .table-container>table>thead {
+            display: none;
+        }
+
+    }
+
+    // تعداد ستون
+    .c-2 .table-container>table>* {grid-template-columns: repeat(2, 1fr);}
+    .c-3 .table-container>table>* {grid-template-columns: repeat(3, 1fr);}
+    .c-5 .table-container>table>* {grid-template-columns: repeat(5, 1fr);}
+    .c-6 .table-container>table>* {grid-template-columns: repeat(6, 1fr);}
+
+    // ستون ها در تبلت
+    @media (max-width: 768px) {
+        .card-g .table-container>table>* {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // ستون ها در موبایل        
+    @media (max-width: 480px) {
+        .card-g .table-container>table>* {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+
+// حالت دوم: اسکرول
+
+    // استایل پایه
+    .card-s {
+        tr {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #b5b5b526;;
+            background-color: #b5b5b518;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.9em;
+            line-height: 1.5em;
+            overflow: hidden;
+            width: 150px;
+            justify-content: space-around;
+        }
+
+        .table-container>table>* {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 0 10px 0;
+            margin: 0;
+        }
+
+        .table-container>table {
+            margin: 0;
+        }
+
+        td {
+            text-align: center;
+            padding: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .table-container>table td ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .table-container>table td li {
+            display: inline-block;
+            background-color: var(--lightgray);
+            padding: 0px 10px;
+            border-radius: 24px;
+            margin: 2px;
+            font-size: 0.9em;
+        }
+
+        .table-container>table td img {
+            margin: 0;
+        }
+
+        .table-container>table>thead {
+            display: none;
+        }
+    }
+    
+    // تنظیم عرض
+    .w100 tr {width: 100px;}
+    .w200 tr {width: 200px;}
+    .w300 tr {width: 300px;}
+
+
+// استایل های سفارشی مشترک: هم گرید هم اسکرول
+
+    // نمایش متن در یک سطر و مخفی کردن کاراکترهای اضافی
+    .nowarp td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    // نمایش متن در دو سطر و مخفی کردن کاراکترهای اضافی
+    .nowarp2 td {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+    }
+
+    // نسبت تصویر
+    .c1-1 .table-container>table td img {
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        background-color: #a5a5a526;
+    }
+
+    .c16-9 .table-container>table td img {
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        background-color: #a5a5a526;
+    }
+
+    .c3-4 .table-container>table td img {
+        aspect-ratio: 3 / 4;
+        object-fit: contain;
+        background-color: #a5a5a526;
+    }
+
+
+// حالت سوم: در یک نگاه
+    .overview-3 {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .overview-4 {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+    }
+
+    @media (max-width: 480px) {
+        .overview-3, .overview-4  {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+// برای 100% کردن عرض نمای کارتی تکی
+.full {
+    table{
+        display: block;
+    }
+
+    tr {
+        width: 100%;
+    }
+
+    .table-container>table {
+        padding: 0;
+    }
+}
+
+// جداول عادی
+.fill-table .table-container>table{
+    width: -webkit-fill-available;
+}
