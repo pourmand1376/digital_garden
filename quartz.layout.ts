@@ -1,40 +1,12 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-
+// import IndexPage from "./quartz/components/pages/IndexPage"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [
-    Component.Flex({
-      components: [
-        { Component: Component.PageTitle() },
-        { Component: Component.Flex({
-          components: [
-            { Component: Component.Search() },
-            { Component: Component.Darkmode() },
-          ],
-        }), 
-        },
-      ],
-    }),  
-    
-  ],
+  header: [],
   afterBody: [
-    Component.Flex({
-      components: [
-        // { 
-        //   Component: Component.Backlinks(),
-        //   align: "start",
-        // },
-        { 
-          Component: Component.TagList(),
-          align: "start",
-        },
-      ],
-      direction: "column",
-    }),  
-
     Component.Comments({
       provider: 'giscus',
       options: {
@@ -48,10 +20,10 @@ export const sharedPageComponents: SharedLayout = {
       }
     }),
   ],
-  footer: 
-  Component.Footer({
+  footer: Component.Footer({
     links: {
-      "github": "https://github.com/pourmand1376",
+      // "آپارات": "https://www.aparat.com/Crystalline",
+      // "گیت‌هاب": "https://github.com/eledah",
     },
   }),
 }
@@ -59,41 +31,71 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    // Component.Breadcrumbs(),
     Component.ConditionalRender({
-      component: Component.ArticleTitle(),
+      component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ConditionalRender({
-      component: Component.ContentMeta({ showReadingTime: false, showComma: false }),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
-    Component.MobileOnly(Component.TableOfContents()),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
   ],
   left: [
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
+    Component.DesktopOnly(Component.Search()),
+    // Component.DesktopOnly(Component.Explorer({
+    //   filterFn: (node) => {
+    //     // exclude files with the tag "explorerexclude"
+    //     return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
+    //   },
+    // })),
     Component.DesktopOnly(Component.TableOfContents()),
-    // Component.DesktopOnly(Component.Explorer()),
+    Component.MobileOnly(Component.Backlinks()),
   ],
   right: [
-    Component.Graph(),
-    Component.Backlinks(),
-    // Component.FloatingButtons(),
-    // Component.RecentNotes(),
+    // Component.DesktopOnly(Component.Sidenotes()),
+    Component.DesktopOnly(Component.Graph()),
+    Component.DesktopOnly(Component.Backlinks()),
+
+    Component.MobileOnly(Component.PageTitle()),
+    // Component.MobileOnly(Component.Search()),
+  ],
+}
+
+// components for the index page specifically (with featured cards)
+export const indexPageLayout: PageLayout = {
+  beforeBody: [
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
+  ],
+  left: [
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
+    Component.DesktopOnly(Component.Search()),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.MobileOnly(Component.Backlinks()),
+  ],
+  right: [
+    Component.DesktopOnly(Component.Graph()),
+    Component.DesktopOnly(Component.Backlinks()),
+    Component.MobileOnly(Component.PageTitle()),
+    Component.MobileOnly(Component.Darkmode()),
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [
-    Component.Breadcrumbs(),
-    Component.ArticleTitle(),
-    // Component.ContentMeta(),
-  ],
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
+    Component.Search(),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => node.slugSegment !== "explorerexclude",
+    })),
   ],
   right: [
-    Component.Graph(),
-    Component.Backlinks(),
-    // Component.FloatingButtons(),
+    Component.MobileOnly(Component.PageTitle()),
   ],
 }
