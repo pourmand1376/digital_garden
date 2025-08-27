@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     },
     locale: "fa-IR",
     baseUrl: "apourmand.ir",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "Templates/"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
