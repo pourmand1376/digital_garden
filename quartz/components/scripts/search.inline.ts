@@ -16,12 +16,11 @@ interface Item {
 type SearchType = "basic" | "tags"
 let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
-// Encoder text  
 const encoder = (str: string) => {
   return str
     .toLowerCase()
     .split(/\s+/)
-    .filter(token => token.length > 0)
+    .filter((token) => token.length > 0)
 }
 
 let index = new FlexSearch.Document<Item>({
