@@ -26,7 +26,6 @@ const encoder = (str: string) => {
 
 let index = new FlexSearch.Document<Item>({
   encode: encoder,
-  rtl: true,
   document: {
     id: "id",
     tag: "tags",
