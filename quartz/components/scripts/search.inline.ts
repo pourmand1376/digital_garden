@@ -9,20 +9,27 @@ interface Item {
   title: string
   content: string
   tags: string[]
+  [key: string]: any
 }
 
 // Can be expanded with things like "term" in the future
 type SearchType = "basic" | "tags"
 let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
-const encoder = (str: string) => str.toLowerCase().split(/\s+/)
+// Encoder text  
+const encoder = (str: string) => {
+  return str
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(token => token.length > 0)
+}
+
 let index = new FlexSearch.Document<Item>({
-  charset: "Default",
   encode: encoder,
+  rtl: true,
   document: {
     id: "id",
     tag: "tags",
-    rtl: true,
     index: [
       {
         field: "title",
@@ -398,7 +405,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     searchLayout.classList.toggle("display-results", currentSearchTerm !== "")
     searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
 
-    let searchResults: FlexSearch.SimpleDocumentSearchResultSetUnit[]
+    let searchResults: any[]
     if (searchType === "tags") {
       currentSearchTerm = currentSearchTerm.substring(1).trim()
       const separatorIndex = currentSearchTerm.indexOf(" ")
@@ -411,7 +418,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
           // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
           limit: Math.max(numSearchResults, 10000),
           index: ["title", "content"],
-          tag: tag,
+          tag: { tags: tag },
         })
         for (let searchResult of searchResults) {
           searchResult.result = searchResult.result.slice(0, numSearchResults)
