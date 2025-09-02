@@ -1,9 +1,0 @@
----
-title:
-aliases:
-created: 2025-08-24 18:34:13
-tags:
-draft: false
-comments: true
-status:
----
