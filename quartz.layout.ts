@@ -75,7 +75,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.RecentNotes())
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false }))
     // Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
