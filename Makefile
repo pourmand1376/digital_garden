@@ -7,3 +7,6 @@ help: ## show all commands
 
 serve: ## serve the site
 	npx quartz build --serve
+
+sync: ## sync quartz
+	npx quartz sync
