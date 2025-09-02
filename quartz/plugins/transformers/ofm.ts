@@ -570,14 +570,16 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
       plugins.push(() => {
         return (tree: HtmlRoot) => {
           visit(tree, 'element', (node) => {
-            if (node.tagName === 'p' || /^h[1-6]$/.test(node.tagName)) {
-              const textContent = node.children
-                .map(child => {
-                  if (child.type === 'text') return child.value;
-                  if (child.type === 'element') return (child as Element).children.map(c => c.type === 'text' ? (c as Literal).value : '').join('');
-                  return '';
-                })
-                .join('');
+            if (node.tagName === 'p' || /^h[1-6]$/.test(node.tagName) || node.tagName === 'ul' || node.tagName === 'ol') {
+              const extractText = (element: any): string => {
+                if (element.type === 'text') return element.value;
+                if (element.type === 'element') {
+                  return element.children.map((c: any) => extractText(c)).join('');
+                }
+                return '';
+              };
+              
+              const textContent = node.children.map(child => extractText(child)).join('');
               
               if (textContent.length > 0) {
                 node.properties = node.properties || {}
