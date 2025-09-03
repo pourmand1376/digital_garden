@@ -39,7 +39,9 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       "Github": "https://github.com/pourmand1376",
       "Linkedin": "https://www.linkedin.com/in/amir-pourmand",
-      "Telegram": "https://t.me/pourmand_amir"
+      "Telegram": "https://t.me/pourmand_amir",
+      "Persian Blog": "https://aprd.ir",
+      "English Blog": "https://amirpourmand.ir"
     },
   }),
 }
