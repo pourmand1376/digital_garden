@@ -5,21 +5,7 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [
-    Component.Flex({
-      components: [
-        { Component: Component.PageTitle() },
-        { Component: Component.Flex({
-          components: [
-            { Component: Component.Search() },
-            { Component: Component.Darkmode() },
-          ],
-        }), 
-        },
-      ],
-    }),  
-    
-  ],
+  header: [],  
   afterBody: [
     Component.Flex({
       components: [
@@ -51,7 +37,9 @@ export const sharedPageComponents: SharedLayout = {
   footer: 
   Component.Footer({
     links: {
-      "github": "https://github.com/pourmand1376",
+      "Github": "https://github.com/pourmand1376",
+      "Linkedin": "https://www.linkedin.com/in/amir-pourmand",
+      "Telegram": "https://t.me/pourmand_amir"
     },
   }),
 }
@@ -74,6 +62,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.TableOfContents()),
   ],
   left: [
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Search(),
+    Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.DesktopOnly(Component.RecentNotes({ showTags: false }))
     // Component.DesktopOnly(Component.Explorer()),
@@ -94,6 +86,11 @@ export const defaultListPageLayout: PageLayout = {
     // Component.ContentMeta(),
   ],
   left: [
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Search(),
+    Component.Darkmode(),
+    Component.Backlinks(),
   ],
   right: [
     Component.Graph(),
