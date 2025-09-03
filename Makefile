@@ -12,4 +12,4 @@ sync: ## sync quartz
 	npx quartz sync
 
 fetch: ## sync obsidian
-	python ~/gitfolder/.dotfiles/scripts/obsidian-quartz-sync.py
+	python scripts/obsidian-quartz-sync.py
