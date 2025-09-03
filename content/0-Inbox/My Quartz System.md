@@ -20,7 +20,7 @@ publish: true
 Todo: [Scurry around your site and find all those broken links - Github](https://github.com/JustinBeckwith/linkinator)
 
 [note](Index%20-%20Note%20Taking.md)
-
+[نرم‌افزار](Index%20-%20Softwares.md)
 
 
 
