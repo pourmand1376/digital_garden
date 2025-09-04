@@ -9,6 +9,8 @@ interface Item {
   title: string
   content: string
   tags: string[]
+  aliases: string[]
+  [key: string]: any
 }
 
 // Can be expanded with things like "term" in the future
@@ -33,6 +35,10 @@ let index = new FlexSearch.Document<Item>({
       },
       {
         field: "tags",
+        tokenize: "forward",
+      },
+      {
+        field: "aliases",
         tokenize: "forward",
       },
     ],
@@ -271,6 +277,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       title: searchType === "tags" ? data[slug].title : highlight(term, data[slug].title ?? ""),
       content: highlight(term, data[slug].content ?? "", true),
       tags: highlightTags(term.substring(1), data[slug].tags),
+      aliases: data[slug].aliases ?? [],
     }
   }
 
@@ -409,7 +416,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
           query: query,
           // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
           limit: Math.max(numSearchResults, 10000),
-          index: ["title", "content"],
+          index: ["title", "content", "aliases"],
           tag: tag,
         })
         for (let searchResult of searchResults) {
@@ -430,7 +437,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       searchResults = await index.searchAsync({
         query: currentSearchTerm,
         limit: numSearchResults,
-        index: ["title", "content"],
+        index: ["title", "content", "aliases"],
       })
     }
 
@@ -442,6 +449,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     // order titles ahead of content
     const allIds: Set<number> = new Set([
       ...getByField("title"),
+      ...getByField("aliases"),
       ...getByField("content"),
       ...getByField("tags"),
     ])
@@ -478,6 +486,7 @@ async function fillDocument(data: ContentIndex) {
         title: fileData.title,
         content: fileData.content,
         tags: fileData.tags,
+        aliases: fileData.aliases,
       }),
     )
   }
