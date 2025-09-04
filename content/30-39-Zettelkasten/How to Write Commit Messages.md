@@ -4,6 +4,8 @@ shamsi: 1404-06-11 18:36:14
 calendar: "[[2025-09-02]]"
 tags:
 aliases:
+  - Semantic Commit Messages
+  - git semantic message
 publish: true
 title: How to Write Commit Messages - Semantic Commit Messages
 ---
