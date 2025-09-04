@@ -16,6 +16,7 @@ export type ContentDetails = {
   links: SimpleSlug[]
   tags: string[]
   content: string
+  aliases: string[]
   richContent?: string
   date?: Date
   description?: string
@@ -110,6 +111,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             links: file.data.links ?? [],
             tags: file.data.frontmatter?.tags ?? [],
             content: file.data.text ?? "",
+            aliases: file.data.frontmatter?.aliases ?? [],
             richContent: opts?.rssFullHtml
               ? escapeHTML(toHtml(tree as Root, { allowDangerousHtml: true }))
               : undefined,
