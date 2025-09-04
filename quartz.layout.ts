@@ -62,6 +62,10 @@ export const defaultContentPageLayout: PageLayout = {
       rootName: "خانه",
     }),
     Component.MobileOnly(Component.TableOfContents()),
+    Component.ConditionalRender({
+      component: Component.Backlinks(),
+      condition: (page) => page.fileData.filePath?.toLowerCase().includes("index") == true,
+    })
   ],
   left: [
     Component.PageTitle(),
@@ -69,14 +73,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false }))
+    Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
     // Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
     Component.Graph(),
     Component.Backlinks(),
-    // Component.FloatingButtons(),
-    // Component.RecentNotes(),
   ],
 }
 
@@ -85,18 +87,16 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
-    // Component.ContentMeta(),
+    Component.ContentMeta(),
   ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Backlinks(),
   ],
   right: [
     Component.Graph(),
     Component.Backlinks(),
-    // Component.FloatingButtons(),
   ],
 }
