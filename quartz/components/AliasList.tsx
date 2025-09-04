@@ -21,6 +21,43 @@ const AliasList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentP
   }
 }
 
-AliasList.css = "./styles/aliaslist.scss"
+AliasList.css = `
+.aliases {
+  margin: 1rem 0;
+}
+
+.aliases h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.aliases-list {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  gap: 0.4rem;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.aliases-list > li {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  overflow-wrap: normal;
+}
+
+.alias-item {
+  border-radius: 6px;
+  background-color: var(--lightgray);
+  color: var(--dark);
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.1rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+}
+`
 
 export default (() => AliasList) satisfies QuartzComponentConstructor
