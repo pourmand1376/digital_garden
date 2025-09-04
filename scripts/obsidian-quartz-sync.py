@@ -3,7 +3,7 @@
 #!/usr/bin/env python3
 
 ## Constants
-config_default = "~/gitfolder/.dotfiles/scripts/obsidian-quartz-sync.yml"
+config_default = "~/gitfolder/digital_garden/scripts/obsidian-quartz-sync.yml"
 
 ## Imports
 import os
@@ -20,8 +20,9 @@ import subprocess
 def find_publish_mds(md, ignore):
     '''find md files with publish'''
     # check if md file is not in one of the ignored folders
+    md_parts = os.path.normpath(md).split(os.path.sep)
     for folder in ignore:
-        if folder in md:
+        if folder in md_parts:
             return None, None
     # load md file
     try:
