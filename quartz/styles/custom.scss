@@ -50,3 +50,47 @@ article p, article li{
   .external-icon {
     display: none;
   }
+
+// https://github.com/bfahrenfort/quartz/blob/v4/quartz.config.ts
+// Background/visual elements
+//
+
+// Pseudo-element for the transparent background cover moon
+[saved-theme="dark"] body::before {
+  filter: invert(100%);
+  opacity: 0.03;
+}
+body::before {
+  pointer-events: none;
+  filter: invert(0%);
+  content: url("/moon-light.png");
+  position: fixed;
+  top: -400px;
+  left: -300px;
+  transform: scale(0.67);
+  // content: "";
+  // background-image: url("/static/moon-light.png");
+  opacity: 0.04;
+}
+
+.head-card {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 3em 0em;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+// Specifically the first part of the index page with the moon
+[saved-theme="dark"] body[data-slug="index"] img[src="./moon-light.png"] {
+  filter: invert(100%);
+}
+body[data-slug="index"] img {
+  height: 15em;
+  filter: invert(0%);
+}
+
+body[data-slug="index"] blockquote[class="callout"][data-callout="tip"] {
+  width: 50%;
+}
+

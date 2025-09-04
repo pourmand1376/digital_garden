@@ -30,26 +30,26 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#F8F8F8",
-          lightgray: "rgb(242, 240, 229)",
-          gray: "rgb(206, 205, 195)",
-          darkgray: "rgb(16, 15, 15)",
-          dark: "rgb(16, 15, 15)",
-          secondary: "rgb(139, 126, 200)",
-          tertiary: "rgb(94, 64, 157)",
-          highlight: "rgba(94, 64, 157, 0.15)",
-          textHighlight: "rgba(94, 64, 157, 0.15)",
+          light: "#f0f0f2", // Backg
+          lightgray: "#d8d8da", // Code Backg
+          gray: "#868889", // Unread nodes and subtitles
+          darkgray: "#202225", // Text
+          dark: "#202225", // Code text
+          secondary: "#027b1f", // Links, title, and current node
+          tertiary: "#185ecd", // Visited nodes
+          highlight: "rgba(143, 159, 169, 0.15)",
+          textHighlight: "#fff23688",
         },
         darkMode: {
-          light: "rgb(16, 15, 15)",
-          lightgray: "rgb(40, 39, 38)",
-          gray: "#9f9898",
-          darkgray: "rgb(214, 211, 203)",
-          dark: "rgb(206, 205, 195)",
-          secondary: "#a68adf",
-          tertiary: "#846aff",
-          highlight: "rgba(139, 126, 200, 0.15)",
-          textHighlight: "rgba(139, 126, 200, 0.15)",
+          light: "#202225", // Backg
+          lightgray: "#383b3d", // Code Backg
+          gray: "#686D82", // Unread nodes and subtitles
+          darkgray: "#f0f0f2", // Text
+          dark: "#f0f0f2", // Code text
+          secondary: "#a6e3a1", // Links, title, and current node
+          tertiary: "#89dceb", // Visited nodes
+          highlight: "rgba(143, 159, 169, 0.15)",
+          textHighlight: "#b3aa0288",
         },
       },
     },
