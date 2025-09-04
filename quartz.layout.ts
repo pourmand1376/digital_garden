@@ -1,47 +1,49 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],  
+  header: [],
   afterBody: [
     Component.Flex({
       components: [
-        // { 
+        // {
         //   Component: Component.Backlinks(),
         //   align: "start",
         // },
-        { 
+        {
           Component: Component.TagList(),
+          align: "start",
+        },
+        {
+          Component: Component.AliasList(),
           align: "start",
         },
       ],
       direction: "column",
-    }),  
+    }),
 
     Component.Comments({
-      provider: 'giscus',
+      provider: "giscus",
       options: {
-        repo: 'amir-pourmand/quartz',
-        repoId: 'R_kgDOPjileA',
-        category: 'Announcements',
-        categoryId: 'DIC_kwDOPjileM4Cui6P',
-        lang: 'fa',
-        mapping: 'pathname',
-        inputPosition: 'top',
-      }
+        repo: "amir-pourmand/quartz",
+        repoId: "R_kgDOPjileA",
+        category: "Announcements",
+        categoryId: "DIC_kwDOPjileM4Cui6P",
+        lang: "fa",
+        mapping: "pathname",
+        inputPosition: "top",
+      },
     }),
   ],
-  footer: 
-  Component.Footer({
+  footer: Component.Footer({
     links: {
-      "Github": "https://github.com/pourmand1376",
-      "Linkedin": "https://www.linkedin.com/in/amir-pourmand",
-      "Telegram": "https://t.me/pourmand_amir",
+      Github: "https://github.com/pourmand1376",
+      Linkedin: "https://www.linkedin.com/in/amir-pourmand",
+      Telegram: "https://t.me/pourmand_amir",
       "Persian Blog": "https://aprd.ir",
-      "English Blog": "https://amirpourmand.ir"
+      "English Blog": "https://amirpourmand.ir",
     },
   }),
 }
@@ -65,7 +67,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ConditionalRender({
       component: Component.Backlinks(),
       condition: (page) => page.fileData.filePath?.toLowerCase().includes("index") == true,
-    })
+    }),
   ],
   left: [
     Component.PageTitle(),
@@ -76,10 +78,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
     // Component.DesktopOnly(Component.Explorer()),
   ],
-  right: [
-    Component.Graph(),
-    Component.Backlinks(),
-  ],
+  right: [Component.Graph(), Component.Backlinks()],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
@@ -95,8 +94,5 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
   ],
-  right: [
-    Component.Graph(),
-    Component.Backlinks(),
-  ],
+  right: [Component.Graph(), Component.Backlinks()],
 }
