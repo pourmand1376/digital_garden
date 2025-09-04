@@ -10,9 +10,7 @@ const AliasList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentP
         <ul class="aliases-list">
           {aliases.map((alias: string) => (
             <li>
-              <span class="alias-item">
-                {alias}
-              </span>
+              <span class="alias-item">{alias}</span>
             </li>
           ))}
         </ul>
