@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 15:08:36
+created: 2024-10-17 15:08:36
 tags:
 title: یک نرم‌افزار برای همه چیز - آری یا خیر
 publish: true

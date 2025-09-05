@@ -1,6 +1,6 @@
 ---
-creation date: 2024-10-31 11:38:32
-shamsi date: 1403-08-10
+created: 2024-10-31 11:38:32
+shamsi: 1403-08-10
 tags:
 aliases:
 title: My Workspaces in Aerospace Window Manager

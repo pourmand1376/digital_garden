@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 15:05:27
+created: 2024-10-17 15:05:27
 tags:
   - youtube
 title: تور ذهن دوم روی مک

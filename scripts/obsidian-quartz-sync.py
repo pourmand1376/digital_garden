@@ -184,6 +184,14 @@ def main(config_file):
     sync_files = []
     assets = []
 
+    # Delete entire content folder and recreate it
+    logging.info("Deleting entire content folder for fresh sync...")
+    if os.path.exists(dest):
+        shutil.rmtree(dest)
+        logging.info(f"Deleted: {dest}")
+    os.makedirs(dest, exist_ok=True)
+    logging.info(f"Created: {dest}")
+
     # Find md files with publish and its assets
     logging.info(f"Scanning for markdown files in: {src}")
     md_files = glob(os.path.join(src, "**/*.md"), recursive=True)
@@ -215,70 +223,36 @@ def main(config_file):
     
     logging.info(f"Processing complete: {published} files marked for publishing out of {processed} total")
 
-    # sync files based on date modified
-    logging.info(f"Syncing {len(sync_files)} markdown files...")
-    updated_files = 0
-    new_files = 0
+    # Copy all files (fresh sync every time)
+    logging.info(f"Copying {len(sync_files)} markdown files...")
+    copied_files = 0
     
     for src_file, dest_file in sync_files:
         if not src_file:
             continue
         if not os.path.exists(os.path.dirname(dest_file)):
             os.makedirs(os.path.dirname(dest_file))
-        if os.path.exists(dest_file):
-            if os.path.getmtime(src_file) > os.path.getmtime(dest_file):
-                logging.info(f"Updating {os.path.basename(dest_file)}")
-                copy_public_text(src_file, dest_file)
-                updated_files += 1
-        else:
-            logging.info(f"Copying {os.path.basename(dest_file)}")
-            copy_public_text(src_file, dest_file)
-            new_files += 1
+        logging.info(f"Copying {os.path.basename(dest_file)}")
+        copy_public_text(src_file, dest_file)
+        copied_files += 1
 
-    # asset files based on date modified
-    logging.info(f"Syncing {len(assets)} assets...")
-    updated_assets = 0
-    new_assets = 0
+    # Copy all assets (fresh sync every time)
+    logging.info(f"Copying {len(assets)} assets...")
+    copied_assets = 0
     
     for src_asset, dest_asset in assets:
         if not src_asset:
             continue
         if not os.path.exists(os.path.dirname(dest_asset)):
             os.makedirs(os.path.dirname(dest_asset))
-        if os.path.exists(dest_asset):
-            if os.path.getmtime(src_asset) > os.path.getmtime(dest_asset):
-                logging.info(f"Updating asset {os.path.basename(dest_asset)}")
-                copy_assets(src_asset, dest_asset, config.get("watermark"))
-                updated_assets += 1
-        else:
-            logging.info(f"Copying asset {os.path.basename(dest_asset)}")
-            copy_assets(src_asset, dest_asset, config.get("watermark"))
-            new_assets += 1
+        logging.info(f"Copying asset {os.path.basename(dest_asset)}")
+        copy_assets(src_asset, dest_asset, config.get("watermark"))
+        copied_assets += 1
 
-    # Mirror sync: remove files that shouldn't exist in target
-    logging.info("Mirroring target directory...")
-    deleted_count = 0
-    
-    # Get all expected files (both md and assets)
-    expected_files = set(dest_file for _, dest_file in sync_files)
-    expected_files.update(dest_asset for _, dest_asset in assets)
-    
-    # Find all files currently in target
-    target_files = glob(os.path.join(dest, "**/*"), recursive=True)
-    target_files = [f for f in target_files if os.path.isfile(f)]
-    
-    # Delete files that shouldn't exist
-    for target_file in target_files:
-        if target_file not in expected_files:
-            logging.info(f"Deleting removed file: {os.path.relpath(target_file, dest)}")
-            os.remove(target_file)
-            deleted_count += 1
-
-    # sync complete
-    logging.info("Sync complete!")
-    logging.info(f"Files: {new_files} new, {updated_files} updated")
-    logging.info(f"Assets: {new_assets} new, {updated_assets} updated") 
-    logging.info(f"Deleted: {deleted_count} files removed from target")
+    # Sync complete
+    logging.info("Fresh sync complete!")
+    logging.info(f"Files: {copied_files} copied")
+    logging.info(f"Assets: {copied_assets} copied")
 
 # get path
 if __name__ == "__main__":

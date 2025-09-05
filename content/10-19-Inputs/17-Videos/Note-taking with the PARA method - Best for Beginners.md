@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 10:48:39
+created: 2024-10-17 10:48:39
 tags:
   - youtube
 title: Note-taking with the PARA method - Best for Beginners

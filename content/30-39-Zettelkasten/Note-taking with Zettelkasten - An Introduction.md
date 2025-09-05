@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 14:57:13
+created: 2024-10-17 14:57:13
 tags:
   - youtube
 title: Note-taking with Zettelkasten - An Introduction

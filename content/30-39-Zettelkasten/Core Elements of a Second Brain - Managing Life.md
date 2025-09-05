@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 18:30:24
+created: 2024-10-17 18:30:24
 tags:
 title: المان‌های اصلی یک ذهن دوم - مدیریت زندگی
 aliases:

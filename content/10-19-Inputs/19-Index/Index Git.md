@@ -1,6 +1,6 @@
 ---
-creation date: 2024-10-27 15:59:21
-shamsi date: 1403-08-06
+created: 2024-10-27 15:59:21
+shamsi: 1403-08-06
 tags:
 aliases:
   - git

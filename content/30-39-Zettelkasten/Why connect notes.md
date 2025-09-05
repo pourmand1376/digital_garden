@@ -1,5 +1,5 @@
 ---
-creation date: 2024-10-19 02:25:38
+created: 2024-10-19 02:25:38
 tags:
 title: علت اتصال نوت‌ها به یکدیگر
 publish: true

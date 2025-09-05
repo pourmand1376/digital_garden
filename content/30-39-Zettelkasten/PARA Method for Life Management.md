@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 10:50:18
+created: 2024-10-17 10:50:18
 tags:
 title: PARA Method for Life Management
 publish: true

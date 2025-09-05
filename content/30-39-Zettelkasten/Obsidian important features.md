@@ -1,6 +1,6 @@
 ---
-creation date: 2024-09-10 08:50
-modification date: Tuesday 10th September 2024 08:50:52
+created: 2024-09-10 08:50
+modified: 2024-09-10 08:50:52
 tags:
   - blog_to_publish
 title: قابلیت‌های مهم Obsidian

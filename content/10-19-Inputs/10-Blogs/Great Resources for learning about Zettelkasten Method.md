@@ -1,5 +1,5 @@
 ---
-creation date: 2024-10-19 01:45:30
+created: 2024-10-19 01:45:30
 tags:
   - blog
 title: Great Resources for learning about Zettelkasten Method

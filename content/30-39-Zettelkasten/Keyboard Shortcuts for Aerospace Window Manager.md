@@ -1,6 +1,6 @@
 ---
-creation date: 2024-10-31 10:49:22
-shamsi date: 1403-08-10
+created: 2024-10-31 10:49:22
+shamsi: 1403-08-10
 tags:
 aliases:
 title: Keyboard Shortcuts for Aerospace Window Manager

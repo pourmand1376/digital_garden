@@ -1,5 +1,5 @@
 ---
-creation date: 2024-10-18 00:37:38
+created: 2024-10-18 00:37:38
 tags:
   - index
 aliases:

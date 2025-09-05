@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 18:22:19
+created: 2024-10-17 18:22:19
 tags:
   - youtube
 source: https://www.youtube.com/watch?v=WtKeeDYA_2I

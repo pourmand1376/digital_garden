@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 14:03:39
+created: 2024-10-17 14:03:39
 tags:
 title: مخفی کردن تگ‌های خاص در سرچ ابسیدین
 publish: true

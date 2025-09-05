@@ -1,6 +1,6 @@
 ---
-creation date: 2024-10-16 03:18
-modification date: Wednesday 16th October 2024 03:18:08
+created: 2024-10-16 03:18
+modified: 2024-10-16 03:18:08
 title: مدیریت محتوای مصرفی از طریق سیستم Zettlekasten
 publish: true
 ---

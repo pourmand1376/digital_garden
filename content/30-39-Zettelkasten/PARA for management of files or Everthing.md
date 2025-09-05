@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 23:35:03
+created: 2024-10-17 23:35:03
 tags:
 title: PARA for management of files or Everthing
 publish: true

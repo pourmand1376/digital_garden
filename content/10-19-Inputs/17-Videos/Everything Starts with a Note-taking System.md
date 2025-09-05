@@ -1,6 +1,6 @@
 ---
-creation date: 2024-10-15 22:32
-modification date: Tuesday 15th October 2024 22:32:41
+created: 2024-10-15 22:32
+modified: 2024-10-15 22:32:41
 tags:
   - youtube
 title: Everything Starts with a Note-taking System

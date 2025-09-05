@@ -1,6 +1,6 @@
 ---
-creation date: 2024-10-31 14:50:45
-shamsi date: 1403-08-10
+created: 2024-10-31 14:50:45
+shamsi: 1403-08-10
 tags:
 aliases:
 title: کلیدهای میانبر ابسیدین

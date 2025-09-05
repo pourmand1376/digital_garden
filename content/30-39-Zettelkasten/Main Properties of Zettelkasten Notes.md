@@ -1,5 +1,5 @@
 ---
-creation date: Thursday 17th October 2024 14:58:04
+created: 2024-10-17 14:58:04
 tags:
 title: Main Properties of Zettelkasten Notes
 publish: true
