@@ -40,6 +40,8 @@ def find_publish_mds(md, ignore):
     except Exception as e:
         return None, None, f"Error loading {os.path.basename(md)}: {e}"
     
+
+    
     # check if publish and title validation
     has_publish = "publish" in post
     title_value = post.get("title", "") or ""
@@ -56,7 +58,15 @@ def find_publish_mds(md, ignore):
     # Error if publish is true and title length < 4
     if post["publish"] and len(title_value) < 4:
         return None, None, f"Error in {os.path.basename(md)}: 'publish' is true but title too short ('{title_value}'), must be at least 4 characters"
-        
+    
+        # Validate that frontmatter exists and has basic structure
+    if not post.metadata:
+        return None, None, f"Error in {os.path.basename(md)}: No frontmatter found - all notes must have frontmatter"
+    
+    # Validate that created field exists
+    if "created" not in post or not post["created"]:
+        return None, None, f"Error in {os.path.basename(md)}: 'created' field is required in frontmatter"
+
     return True, post["assets"] if "assets" in post else [], None
 
 
