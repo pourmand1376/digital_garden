@@ -8,7 +8,7 @@ aliases:
 publish: true
 title: فهرست گیت
 ---
-[software](Index%20-%20Softwares.md)
+[software](Index%20Softwares.md)
 [terminal](Index%20-%20Terminal.md)
 
 

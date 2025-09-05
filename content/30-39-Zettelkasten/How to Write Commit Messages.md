@@ -9,7 +9,7 @@ aliases:
 publish: true
 title: How to Write Commit Messages - Semantic Commit Messages
 ---
-[git](Index%20-%20Git.md)
+[git](Index%20Git.md)
 
 There is a nice format for commit messages. It is called semantic commit messages [^1]. 
 

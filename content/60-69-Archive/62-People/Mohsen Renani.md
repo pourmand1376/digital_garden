@@ -9,5 +9,5 @@ aliases:
   - دکتر محسن رنانی
   - رنانی
 ---
-[اقتصاد](Index%20-%20Economy.md)
+[اقتصاد](Index%20Economy.md)
 

@@ -23,5 +23,5 @@ publish: true
 [A Course in Machine Learning Book](https://ciml.info/dl/v0_99/ciml-v0_99-all.pdf)
 
 
-[هوش مصنوعی](Index%20-%20AI.md)
-[یادگیری](Index%20-%20Learning.md)
+[هوش مصنوعی](Index%20AI.md)
+[یادگیری](Index%20Learning.md)

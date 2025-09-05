@@ -11,7 +11,7 @@ title: دیدن فیلم با استریم بدون دانلود
 
 تقریباً همه پلیرهای معروف و پدرمادردار (چه تو ویندوز، چه مک و چه اندروید) این حالت رو پشتیبانی می‌کنند. 
 [index](10-19-Inputs/17-Videos/index.md)
-[software](Index%20-%20Softwares.md)
+[software](Index%20Softwares.md)
 
 [Watch online movies and videos directly through VLC Player without downloading](https://www.youtube.com/watch?v=0aZoPsgoeaY)
 
