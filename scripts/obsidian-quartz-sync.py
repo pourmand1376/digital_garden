@@ -14,9 +14,19 @@ import frontmatter # pip install python-frontmatter
 import logging
 import shutil
 import subprocess
+import argparse
 # from pprint import pprint
 
 ## Functions
+def has_non_ascii_filename(filepath):
+    '''Check if filename contains non-ASCII characters'''
+    filename = os.path.basename(filepath)
+    try:
+        filename.encode('ascii')
+        return False
+    except UnicodeEncodeError:
+        return True
+
 def find_publish_mds(md, ignore):
     '''find md files with publish'''
     # check if md file is not in one of the ignored folders
@@ -149,7 +159,7 @@ def watermark_image(src, dest, config):
 
 
 ## Main
-def main(config_file):
+def main(config_file, debug=False):
     # Load config
     with open(config_file, "r", encoding="utf-8") as f:
         read_data = f.read()
@@ -160,15 +170,15 @@ def main(config_file):
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     
-    # File handler with timestamps
+    # File handler with timestamps (always debug level)
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(logging.DEBUG)
     file_formatter = logging.Formatter("%(asctime)s - %(message)s")
     file_handler.setFormatter(file_formatter)
     
-    # Console handler without timestamps  
+    # Console handler - level depends on debug flag
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)
+    console_handler.setLevel(logging.DEBUG if debug else logging.WARNING)
     console_formatter = logging.Formatter("%(message)s")
     console_handler.setFormatter(console_formatter)
     
@@ -204,6 +214,11 @@ def main(config_file):
         processed += 1
         should_publish, asset = find_publish_mds(md, config["ignore_folders"])
         if should_publish:
+            # Check for non-ASCII characters only for files that would be published
+            if has_non_ascii_filename(md):
+                logging.warning(f"⚠ Skipping file with non-ASCII characters: {os.path.basename(md)}")
+                continue
+                
             published += 1
             logging.info(f"✓ Publishing: {os.path.basename(md)}")
             # Calculate relative path from source directory to preserve folder structure
@@ -243,6 +258,12 @@ def main(config_file):
     for src_asset, dest_asset in assets:
         if not src_asset:
             continue
+            
+        # Check for non-ASCII characters in asset filename
+        if has_non_ascii_filename(src_asset):
+            logging.warning(f"⚠ Skipping asset with non-ASCII characters: {os.path.basename(src_asset)}")
+            continue
+            
         if not os.path.exists(os.path.dirname(dest_asset)):
             os.makedirs(os.path.dirname(dest_asset))
         logging.info(f"Copying asset {os.path.basename(dest_asset)}")
@@ -256,20 +277,20 @@ def main(config_file):
 
 # get path
 if __name__ == "__main__":
-    # get argument
-    if len(sys.argv) == 1:
-        config_file = os.path.expanduser(config_default)
-    elif len(sys.argv) == 2:
-        config_file = os.path.expanduser(sys.argv[1])         
-    else:
-        print("Usage: obsidian-quartz-sync <config-path>")
-        sys.exit(1)
+    # Set up argument parsing
+    parser = argparse.ArgumentParser(description="Sync Obsidian notes to Quartz")
+    parser.add_argument("config_path", nargs="?", default=config_default, 
+                        help="Path to config file (default: %(default)s)")
+    parser.add_argument("--debug", action="store_true", 
+                        help="Enable debug output")
+    
+    args = parser.parse_args()
+    config_file = os.path.expanduser(args.config_path)
 
     # check if config file exists
     if not os.path.exists(config_file):
-        print(config_file)
-        print("Config file does not exist")
+        print(f"Config file does not exist: {config_file}")
         sys.exit(1)
 
     # run main
-    main(config_file)
+    main(config_file, debug=args.debug)
