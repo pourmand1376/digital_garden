@@ -44,13 +44,9 @@ def find_publish_mds(md, ignore):
     has_publish = "publish" in post
     title_value = post.get("title", "") or ""
     has_title = "title" in post and title_value.strip() != ""
-    
-    # Skip if no publish field
-    if not has_publish:
-        return None, None, None
-    
-    # Skip if publish is false
-    if not post["publish"]:
+
+    # Skip if no publish field or none filled
+    if not has_publish or not post["publish"]:
         return None, None, None
     
     # Error if publish is true and title is missing/empty
