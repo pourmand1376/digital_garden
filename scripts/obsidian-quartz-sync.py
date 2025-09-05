@@ -28,51 +28,56 @@ def has_non_ascii_filename(filepath):
         return True
 
 def find_publish_mds(md, ignore):
-    '''find md files with publish'''
+    '''find md files with publish - returns (should_publish, assets, error_message)'''
     # check if md file is not in one of the ignored folders
     md_parts = os.path.normpath(md).split(os.path.sep)
     for folder in ignore:
         if folder in md_parts:
-            return None, None
+            return None, None, None
     # load md file
     try:
         post = frontmatter.load(md)
     except Exception as e:
-        logging.error(f"Error loading {os.path.basename(md)}: {e}")
-        return None, None
+        return None, None, f"Error loading {os.path.basename(md)}: {e}"
     
-    # check if publish and title length
-    if "publish" not in post:
-        return None, None
+    # check if publish and title validation
+    has_publish = "publish" in post
+    title_value = post.get("title", "") or ""
+    has_title = "title" in post and title_value.strip() != ""
     
+    # Skip if no publish field
+    if not has_publish:
+        return None, None, None
+    
+    # Skip if publish is false
     if not post["publish"]:
-        return None, None
+        return None, None, None
+    
+    # Error if publish is true and title is missing/empty
+    if post["publish"] and not has_title:
+        return None, None, f"Error in {os.path.basename(md)}: 'publish' is true but 'title' field is missing or empty"
         
-    title = post.get("title", "") or ""
-    if len(title) < 4:
-        logging.debug(f"Skipping {os.path.basename(md)} (title too short: '{title}')")
-        return None, None
+    # Error if publish is true and title length < 4
+    if post["publish"] and len(title_value) < 4:
+        return None, None, f"Error in {os.path.basename(md)}: 'publish' is true but title too short ('{title_value}'), must be at least 4 characters"
         
-    return True, post["assets"] if "assets" in post else []
+    return True, post["assets"] if "assets" in post else [], None
 
 
 def find_asset(src, fn):
-    '''find asset in md file'''
+    '''find asset in md file - returns (asset_path, error_message)'''
     fn = fn[2:-2]
     files = [file for file in glob(os.path.join(src, "**", fn), recursive=True)]
     if len(files) == 0:
-        logging.error(f"Asset {fn} not found")
-        return None
+        return None, f"Asset {fn} not found"
     elif len(files) > 1:
-        logging.error(f"Multiple assets found for {fn}")
-        return None
+        return None, f"Multiple assets found for {fn}"
     else:
-        return files[0]
+        return files[0], None
 
 
 def copy_public_text(src, dest):
     '''copy public text to destination'''
-    print(src)
     with open(src, 'r', encoding='utf-8') as f:
         lines = f.readlines()
     
@@ -194,33 +199,32 @@ def main(config_file, debug=False):
     sync_files = []
     assets = []
 
-    # Delete entire content folder and recreate it
-    logging.info("Deleting entire content folder for fresh sync...")
-    if os.path.exists(dest):
-        shutil.rmtree(dest)
-        logging.info(f"Deleted: {dest}")
-    os.makedirs(dest, exist_ok=True)
-    logging.info(f"Created: {dest}")
-
-    # Find md files with publish and its assets
+    # First pass: Validate all files and collect errors
     logging.info(f"Scanning for markdown files in: {src}")
     md_files = glob(os.path.join(src, "**/*.md"), recursive=True)
     logging.info(f"Found {len(md_files)} markdown files")
     
+    validation_errors = []
     processed = 0
     published = 0
     
     for md in md_files:
         processed += 1
-        should_publish, asset = find_publish_mds(md, config["ignore_folders"])
+        should_publish, asset, error_message = find_publish_mds(md, config["ignore_folders"])
+        
+        # Collect validation errors
+        if error_message:
+            validation_errors.append(error_message)
+            continue
+            
         if should_publish:
             # Check for non-ASCII characters only for files that would be published
             if has_non_ascii_filename(md):
-                logging.warning(f"⚠ Skipping file with non-ASCII characters: {os.path.basename(md)}")
+                validation_errors.append(f"File with non-ASCII characters: {os.path.basename(md)}")
                 continue
                 
             published += 1
-            logging.info(f"✓ Publishing: {os.path.basename(md)}")
+            logging.info(f"✓ Will publish: {os.path.basename(md)}")
             # Calculate relative path from source directory to preserve folder structure
             rel_path = os.path.relpath(md, src)
             dest_file = os.path.join(dest, rel_path)
@@ -229,14 +233,41 @@ def main(config_file, debug=False):
             if asset:
                 logging.info(f"  - Found {len(asset)} assets for {os.path.basename(md)}")
                 for fn in asset:
-                    asset_src = find_asset(src, fn)
+                    asset_src, asset_error = find_asset(src, fn)
+                    if asset_error:
+                        validation_errors.append(asset_error)
+                        continue
                     if asset_src:
+                        # Check for non-ASCII characters in asset filename
+                        if has_non_ascii_filename(asset_src):
+                            validation_errors.append(f"Asset with non-ASCII characters: {os.path.basename(asset_src)}")
+                            continue
                         # Calculate relative path for asset to preserve folder structure
                         asset_rel_path = os.path.relpath(asset_src, src)
                         asset_dest = os.path.join(dest, asset_rel_path)
                         assets.append((asset_src, asset_dest))
     
-    logging.info(f"Processing complete: {published} files marked for publishing out of {processed} total")
+    # Check if there were any validation errors
+    if validation_errors:
+        logging.error("=" * 60)
+        logging.error("VALIDATION ERRORS FOUND - STOPPING OPERATION")
+        logging.error("=" * 60)
+        for error in validation_errors:
+            logging.error(f"❌ {error}")
+        logging.error("=" * 60)
+        logging.error(f"Found {len(validation_errors)} error(s). Fix these issues before running again.")
+        logging.error("No files were modified.")
+        sys.exit(1)
+    
+    logging.info(f"Validation complete: {published} files marked for publishing out of {processed} total")
+    
+    # Delete entire content folder and recreate it (only after validation passes)
+    logging.info("Deleting entire content folder for fresh sync...")
+    if os.path.exists(dest):
+        shutil.rmtree(dest)
+        logging.info(f"Deleted: {dest}")
+    os.makedirs(dest, exist_ok=True)
+    logging.info(f"Created: {dest}")
 
     # Copy all files (fresh sync every time)
     logging.info(f"Copying {len(sync_files)} markdown files...")
@@ -257,11 +288,6 @@ def main(config_file, debug=False):
     
     for src_asset, dest_asset in assets:
         if not src_asset:
-            continue
-            
-        # Check for non-ASCII characters in asset filename
-        if has_non_ascii_filename(src_asset):
-            logging.warning(f"⚠ Skipping asset with non-ASCII characters: {os.path.basename(src_asset)}")
             continue
             
         if not os.path.exists(os.path.dirname(dest_asset)):
