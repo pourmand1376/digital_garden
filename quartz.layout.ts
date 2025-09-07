@@ -78,7 +78,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
     // Component.DesktopOnly(Component.Explorer()),
   ],
-  right: [Component.Graph(), Component.Backlinks()],
+  right: [Component.Graph(
+    {localGraph:  {depth:2, fontSize: 1.2,scale:2,}}
+  ), Component.Backlinks()],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
@@ -94,5 +96,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
   ],
-  right: [Component.Graph(), Component.Backlinks()],
+  right: [Component.Graph(
+    {
+      localGraph: {depth:2, fontSize: 1.2,scale:2,}
+    }
+  ), Component.Backlinks()],
 }
