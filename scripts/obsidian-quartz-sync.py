@@ -72,7 +72,11 @@ def find_publish_mds(md, ignore):
 
 def find_asset(src, fn):
     '''find asset in md file - returns (asset_path, error_message)'''
-    fn = fn[2:-2]
+    # Remove quotes if present
+    fn = fn.strip('"\'')
+    # Remove [[ ]] brackets if present
+    if fn.startswith('[[') and fn.endswith(']]'):
+        fn = fn[2:-2]
     files = [file for file in glob(os.path.join(src, "**", fn), recursive=True)]
     if len(files) == 0:
         return None, f"Asset {fn} not found"

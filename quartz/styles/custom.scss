@@ -94,3 +94,48 @@ body[data-slug="index"] blockquote[class="callout"][data-callout="tip"] {
   width: 50%;
 }
 
+// Force math expressions to display left-to-right
+.MathJax, 
+.MathJax_Display,
+.MathJax_Preview,
+.katex,
+.katex-display,
+.katex-html,
+mjx-container,
+mjx-math,
+math,
+.math,
+.math-inline,
+.math-display {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  text-align: left !important;
+}
+
+// Additional targeting for inline and display math
+span.math,
+div.math,
+.arithmatex {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+}
+
+// Force code blocks and inline code to display left-to-right
+code,
+pre,
+pre code,
+.highlight,
+.highlight code,
+.codehilite,
+.codehilite code,
+.sourceCode,
+.sourceCode code,
+kbd,
+samp,
+tt,
+.hljs {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  text-align: left !important;
+}
+

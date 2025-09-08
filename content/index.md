@@ -4,7 +4,7 @@ shamsi: 1404-06-11 23:35:29
 calendar: "[[2025-09-02]]"
 tags:
 aliases:
-title: خانه
+title: ذهن دوم من
 publish: true
 comments: false
 assets:
