@@ -4,6 +4,7 @@ shamsi: 1404-06-11 21:16:23
 calendar: "[[2025-09-02]]"
 tags:
 aliases:
+  - چرخ زندگی - حوزه‌های زندگی
 title: چرخ زندگی - حوزه‌های زندگی
 publish: true
 assets:

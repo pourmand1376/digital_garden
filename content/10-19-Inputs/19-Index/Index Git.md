@@ -9,7 +9,7 @@ publish: true
 title: فهرست گیت
 ---
 [software](Index%20Softwares.md)
-[terminal](Index%20-%20Terminal.md)
+[terminal](Index%20Terminal.md)
 
 
 Websites: 

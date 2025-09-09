@@ -23,6 +23,7 @@ ERP = Enterprise Resource Planning
 - [Open Source Cloud ERP Software \| ERPNext](https://frappe.io/erpnext)
 - [انجمن اودو ایران \| بومی سازی اودو در ایران](https://odoo-community.ir/)
 - [Open Source ERP and CRM \| Odoo](https://www.odoo.com/)
+- [مدیریت یکپارچه کسب‌ و کار با Odoo و ERP متن‌ باز + ماژول‌های کلیدی (رایگان) \| فرادرس](https://faradars.org/courses/introduction-to-odoo-erp-system-fvba386?utm_source=youtube&utm_medium=social)
 
 یه دمو از odoo رو میشه اینجا دید:
 [Odoo Demo](https://master.odoo.com/saas_master/demo/)
