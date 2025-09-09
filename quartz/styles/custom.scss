@@ -139,3 +139,15 @@ tt,
   text-align: left !important;
 }
 
+// Dead link styling - links to missing pages
+.dead-link {
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color: #d97706;
+  background-color: var(--lightgray);
+  padding: 0 0.1rem;
+  border-radius: 5px;
+  line-height: 1.4rem;
+  cursor: default;
+}
