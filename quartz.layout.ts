@@ -99,7 +99,7 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [Component.Graph(
     {
-      localGraph: {depth:2, fontSize: 1.2,scale:2,}
+      localGraph: {depth:2, fontSize: 1.2}
     }
   ), Component.Backlinks()],
 }
