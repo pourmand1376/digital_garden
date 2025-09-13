@@ -24,3 +24,4 @@ publish: true
 
 
 [وسایل - ماشین](وسایل%20-%20ماشین.md)
+[چک لیست](Index%20Checklists.md)
