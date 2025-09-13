@@ -6,6 +6,6 @@ aliases:
   - terminal
   - ترمینال
 publish: true
-title: Index - Terminal
+title: فهرست ترمینال
 ---
-[Index - Linux](Index%20-%20Linux.md)
+[Index Linux](Index%20Linux.md)
