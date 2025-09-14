@@ -28,4 +28,4 @@ Go into Service Mode: Alt + Shift + Semicolon
 
 [[My Workspaces in Aerospace Window Manager]]
 [software](Index%20Softwares.md)
-[Index - Keyboard Shortcuts](Index%20-%20Keyboard%20Shortcuts.md)
+[Index Keyboard Shortcuts](Index%20Keyboard%20Shortcuts.md)

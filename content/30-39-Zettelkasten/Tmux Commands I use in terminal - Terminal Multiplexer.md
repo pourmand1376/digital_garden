@@ -45,4 +45,4 @@ Split Vertically
 
 [terminal](Index%20Terminal.md)
 [linux](Index%20Linux.md)
-[keyboard](Index%20-%20Keyboard%20Shortcuts.md)
+[keyboard](Index%20Keyboard%20Shortcuts.md)
