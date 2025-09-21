@@ -2,7 +2,7 @@
 title: The Missing Semester of Your CS Education
 source: https://missing.csail.mit.edu/
 published:
-created: 2025-09-10
+created: 2025-09-10T00:01:00
 description:
 tags:
   - clippings
