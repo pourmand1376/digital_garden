@@ -15,4 +15,4 @@ aliases:
 
 [note](Index%20Note%20Taking.md)
 [PARA Method for Life Management](PARA%20Method%20for%20Life%20Management.md)
-[خانه - خانواده - زندگی](خانه%20-%20خانواده%20-%20زندگی.md)
+[خانه - خانواده - زندگی](Family%20or%20life%20or%20home%20related.md)
