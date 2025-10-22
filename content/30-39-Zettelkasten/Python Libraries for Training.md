@@ -10,29 +10,21 @@ publish: true
 # Training
 ## [PyTorch](Index%20-%20Pytorch.md) Lightening
 https://pytorch-lightning.readthedocs.io/en/latest/
-
-
 ### Hyperparameter Optimization
 ### Optuna
 [Optuna - A hyperparameter optimization framework](https://optuna.org/#code_examples)
-
-
 
 # Argument Parsing
 ### Hydra
 - configurations (replaces `argparse`)
 - https://hydra.cc/
 - youtube: [# Configuration Management For Data Science Made Easy With Hydra](https://www.youtube.com/watch?v=tEsPyYnzt8s&t=3s)
-
 ### Argparse
 https://docs.python.org/3/library/argparse.html
-
 
 ## Logging
 - TensorBoard
 - Wandb
-
-
 ## Human Learn
 https://koaning.github.io/human-learn/index.html
 
@@ -45,6 +37,8 @@ https://rasbt.github.io/mlxtend/
 
 ## pipreqs
 this package extracts `requirements.txt` file. 
+
+[Migrate From Pip to UV](Migrate%20From%20Pip%20to%20UV.md)
 
 # Python libraries to use
 #### Pathlib
