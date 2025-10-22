@@ -8,7 +8,8 @@ aliases:
 title: تکنیک‌های محاسبات سریع ریاضی
 publish: true
 ---
-[YouTube - تکنیک‌های محاسبات ریاضی](https://youtu.be/-iyb0ZqnKxU)
+
+![YouTube - تکنیک‌های محاسبات ریاضی](https://youtu.be/-iyb0ZqnKxU)
 
 خیلی ویدیوی جالبی بود. اکثراً روی کاربرد اتحادها و خاصیت شرکت پذیری ضرب متمرکز بود. 
 
