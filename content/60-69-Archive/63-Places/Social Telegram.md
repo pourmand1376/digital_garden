@@ -6,5 +6,6 @@ aliases:
   - telegram
   - تلگرام
 publish: true
-title: تلگرام
+title: Telegram
 ---
+[شبکه های اجتماعی](Index%20Social%20Networks.md)
