@@ -16,4 +16,3 @@ publish: true
 3. [Obsidian Plugins](Obsidian%20Plugins.md)
 4. [Config Obsidian to work with Hugo](Config%20Obsidian%20to%20work%20with%20Hugo.md)
 5. [Obsidian important features](Obsidian%20important%20features.md)
-6. 

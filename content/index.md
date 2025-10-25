@@ -23,4 +23,5 @@ assets:
 
 [درباره من](about%20me.md)
 ## [فهرست‌ها](10-19-Inputs/19-Index/index.md)
+## [تگ‌ها](tags.md)
 

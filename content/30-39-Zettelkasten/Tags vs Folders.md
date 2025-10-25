@@ -17,4 +17,4 @@ Folders are for separating, tags are for uniting.
 
 نکته‌اش تو Obsidian هم اینه که فولدر رو نمیشه Visualize کرد اما تگ رو میشه. 
 
-[Obsidian](Obsidian.md)
+[obsidian](Index%20-%20Obsidian.md)
