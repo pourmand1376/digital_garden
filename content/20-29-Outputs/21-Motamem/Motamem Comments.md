@@ -5,6 +5,7 @@ calendar: "[[2025-10-25]]"
 tags:
 aliases:
   - کامنت‌های متمم
+  - کامنت متمم
 title: کامنت‌های متمم من
 publish: true
 ---

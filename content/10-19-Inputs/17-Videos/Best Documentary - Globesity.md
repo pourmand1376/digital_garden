@@ -18,6 +18,8 @@ publish: true
 
 ![Globesity](https://www.youtube.com/watch?v=D7CzMPZgcVc)
 
+When a third of our population is either overweight or obese, you can't just tell them that it is their "will power" problem. There is clearly something very wrong globally. We didn't have this problem 50 years before. Now it is everywhere. 
+
 Industry has been focused on CICO. But that's not the whole story. 
 
 They've been promoting the message that not exercising the root cause of obesity and you can burn all the calories you eat by more exercise. 
@@ -39,7 +41,7 @@ Coca-Cola.
 There are some similarities between tobacco fight and Coca-Cola fight. 
 
 ![Dr. Steven Blair of Coca-Cola and ACSM's Global Energy Balance Network - YouTube](https://www.youtube.com/watch?v=9xBV_Enlh1A)
-Just look at this so-called scientist and what he says. 
+Just look at this so-called scientist and what he says. Comments below the video were also interesting. 
 
 > They've found that every study that found no link between sugar consumption and obesity have been funded from sugar industry. 
 
