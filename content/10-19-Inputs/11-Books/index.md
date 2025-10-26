@@ -3,6 +3,7 @@ created: 2025-09-03 23:42:01
 shamsi: 1404-06-12 23:42:01
 calendar: "[[2025-09-03]]"
 tags:
+  - book
 aliases:
 title: کتاب‌ها
 publish: true
