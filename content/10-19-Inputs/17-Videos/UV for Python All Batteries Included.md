@@ -57,7 +57,6 @@ By default it will create virtual environment for each project that you use.
 In order to run the app, you can use:
 ```
 uv run hello.py
-uvx hello.py
 ```
 
 To add packages:

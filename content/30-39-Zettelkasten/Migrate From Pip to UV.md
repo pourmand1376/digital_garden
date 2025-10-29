@@ -33,3 +33,6 @@ Then I change dockerfile using this tutorial:
 - [Optimal Dockerfile for Python with uv \| Container Builds \| Depot Documentation](https://depot.dev/docs/container-builds/how-to-guides/optimal-dockerfiles/python-uv-dockerfile)
 
 [Python](Index%20Python.md)
+
+### UV vs UVX
+Key difference: uv manages full project environments; uvx runs tools in ephemeral environments.
