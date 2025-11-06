@@ -36,7 +36,7 @@ I don't like to install my app, so I've changed it to:
 ```Dockerfile
 FROM python:3.13-slim AS build
 
-COPY --from=ghcr.io/astral-sh/uv:0.8.21 /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /app
 
@@ -65,3 +65,25 @@ ENTRYPOINT ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--p
 
 ### UV vs UVX
 Key difference: uv manages full project environments; uvx runs tools in ephemeral environments.
+
+```Makefile
+.PHONY: help
+help:
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-30s\033[0m %s\n", $$1, $$2}'
+	
+install_all_dependency: ## install all dependencies
+	uv sync
+	
+only_dev_dependency: ## install only dev dependencies
+	uv sync --only-dev
+
+.PHONY: pre-commit
+pre-commit: ## run pre-commit checks
+	uv run pre-commit run
+	
+.PHONY: run
+run: ## run file
+	uv run python main.py
+
+```
+
