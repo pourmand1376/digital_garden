@@ -10,7 +10,7 @@ publish: true
 ---
 [software](Index%20Softwares.md)
 [git](Index%20Git.md)
-
+- [اهمیت Feature Flag در توسعه نرم‌افزار \| گاه‌نوشته‌های امیرپورمند](https://aprd.ir/about-feature-flags/)
 - [Feature Flagging with OpenFeature (LFS140) - Linux Foundation - Education](https://training.linuxfoundation.org/training/feature-flagging-with-openfeature-lfs140/)
 - [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html)
 - [Feature Flags Suck! - KubeCon Atlanta 2025 - Speaker Deck](https://speakerdeck.com/phodgson/feature-flags-suck-kubecon-atlanta-2025)
