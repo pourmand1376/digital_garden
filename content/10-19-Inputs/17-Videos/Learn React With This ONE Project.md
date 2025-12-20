@@ -131,6 +131,3 @@ We also have local storage if you want to maintain state as a `global variable`.
 That's it. :)) This was my first react movie and I just understood what react is. 
 
 [software](Index%20Softwares.md)
-
-
-
