@@ -14,3 +14,5 @@ title: فهرست گیت
 
 Websites: 
 - [Home // Think Like (a) Git](http://think-like-a-git.net/)
+- https://www.google.com/search?q=git+makes+more+sense+when+you+understand
+- [Confusing git terminology](https://jvns.ca/blog/2023/11/01/confusing-git-terminology/)
