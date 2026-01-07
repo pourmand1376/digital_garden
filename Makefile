@@ -13,5 +13,5 @@ sync: ## sync quartz
 	npx quartz sync
 
 fetch: ## sync obsidian
-	python scripts/obsidian-quartz-sync.py
+	python3 scripts/obsidian-quartz-sync.py
 	git status
