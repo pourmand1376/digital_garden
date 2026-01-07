@@ -9,7 +9,7 @@ publish: true
 These are what I've thought about:
 
 B -> Browser
-M -> Music, Movie
+M -> [Music](Index%20-%20Music.md), Movie
 N -> Notes 
 T -> Terminal
 C -> Code

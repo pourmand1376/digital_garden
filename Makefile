@@ -10,8 +10,9 @@ serve: ## serve the site
 	npx quartz build --serve
 
 sync: ## sync quartz
+	#nvm use 24
 	npx quartz sync
 
 fetch: ## sync obsidian
-	python3 scripts/obsidian-quartz-sync.py
+	uv run python scripts/obsidian-quartz-sync.py
 	git status
