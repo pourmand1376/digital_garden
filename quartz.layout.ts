@@ -75,9 +75,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
-    //Component.DesktopOnly(Component.Explorer()),
-    // Component.DesktopOnly(Component.Explorer()),
+    //Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
+    Component.DesktopOnly(Component.Explorer()),
   ],
   right: [Component.Graph(
     {localGraph:  {depth:2, fontSize: 1.2,scale:2,}}
@@ -96,6 +95,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.Explorer()),
   ],
   right: [Component.Graph(
     {
