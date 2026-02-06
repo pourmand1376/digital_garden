@@ -1,6 +1,6 @@
 ---
-created: 2025-12-28 19:47:42
-shamsi: 1404-10-07 19:47:42
+created: 2026-01-25 22:54:42
+shamsi: 1404-11-05 22:54:42
 tags:
 aliases:
   - اینترنت
@@ -9,5 +9,5 @@ aliases:
   - 
 publish: true
 title: Internet
-calendar: "[[2025-12-28]]"
+calendar: "[[2026-01-25]]"
 ---

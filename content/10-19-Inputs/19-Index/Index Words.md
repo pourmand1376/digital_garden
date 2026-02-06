@@ -12,3 +12,4 @@ aliases:
 title: فهرست کلمات
 publish: true
 ---
+[raindrop-Dictionaries](raindrop-Dictionaries.md)

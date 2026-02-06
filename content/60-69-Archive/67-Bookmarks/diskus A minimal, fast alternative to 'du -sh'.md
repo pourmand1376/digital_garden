@@ -5,13 +5,13 @@ author:
   - "[[musicinmybrain]]"
   - "[[sharkdp]]"
 published:
-created: 2026-01-07 01:22:24
+created: 2026-01-25 22:54:42
 description: A minimal, fast alternative to 'du -sh'. Contribute to sharkdp/diskus development by creating an account on GitHub.
 tags:
   - clippings
   - 
-shamsi: 1404-10-17 01:22:24
-calendar: "[[2026-01-07]]"
+shamsi: 1404-11-05 22:54:42
+calendar: "[[2026-01-25]]"
 aliases:
 publish: true
 ---
