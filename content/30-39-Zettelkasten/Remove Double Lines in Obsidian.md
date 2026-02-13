@@ -12,6 +12,9 @@ Sometimes when you copy a new markdown, obsidian will paste some new lines. This
 First create a new file named `remove-double-lines.md`. Then paste this content into it:
 
 ```
+<%*
+app.vault.process(app.workspace.getActiveFile(), contents => contents.replace(/\n\s*\n/g, '\n'))
+-%>
 ```
 
 This basically removes all double newlines. 
@@ -20,7 +23,12 @@ Credit: https://www.reddit.com/r/ObsidianMD/comments/1ga3hvo/comment/ltb6zwz
 
 Original Pasted Content (which does that with two '\n\n')
 ```
+<%*
+// Clean up multiple line breaks in a note
+app.vault.process(app.workspace.getActiveFile(), contents => contents.replace(/\n\s*\n/g, '\n\n'))
+-%>
 ```
+
 
 [obsidian](Index%20-%20Obsidian.md)
 [قابلیت‌های مهم Obsidian](Obsidian%20important%20features.md)
