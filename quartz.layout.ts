@@ -64,10 +64,6 @@ export const defaultContentPageLayout: PageLayout = {
       rootName: "خانه",
     }),
     Component.MobileOnly(Component.TableOfContents()),
-    Component.ConditionalRender({
-      component: Component.Backlinks(),
-      condition: (page) => page.fileData.filePath?.toLowerCase().includes("index") == true,
-    }),
   ],
   left: [
     Component.PageTitle(),
