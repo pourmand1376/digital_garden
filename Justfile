@@ -15,5 +15,5 @@ sync:
 
 # sync obsidian
 fetch: 
-  uv run python scripts/obsidian-quartz-sync.py
+  cd scripts && uv run python obsidian-quartz-sync.py
   git status
