@@ -7,6 +7,7 @@ aliases:
 title: ریاضیات برای یادگیری ماشین
 publish: true
 ---
+[کتاب‌های فیزیکی](_Index%20-%20Physical%20Books.md)
 
 Chapter 2
 - [[what is vector]]

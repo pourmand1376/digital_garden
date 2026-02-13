@@ -7,6 +7,12 @@ aliases:
 title: کتاب «دوره‌ای در یادگیری ماشین»
 publish: true
 ---
+[کتاب‌های دیجیتال](_Index%20-%20Digital%20Books.md)
+
+
+https://drive.google.com/drive/u/0/folders/1ndqWU0RCeHGUt4Cjzy9Wvwob7eaf5RT7
+
+
 
 مقدمه‌اش از یادگیری ماشین رو دوست داشتم. میگه که هوش مصنوعی بدون «یادگیری» هیچ معنایی نداره و اصولاً ما به چیزی هوشمند می‌گیم که بتونه یاد بگیره. 
 

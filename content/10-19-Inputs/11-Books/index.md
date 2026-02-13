@@ -5,6 +5,9 @@ calendar: "[[2025-09-03]]"
 tags:
   - book
 aliases:
+  - کتاب‌ها
+  - لیست کتاب‌ها
+  - مجموعه کتاب
 title: کتاب‌ها
 publish: true
 ---

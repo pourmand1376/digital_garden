@@ -10,6 +10,10 @@ tags:
   - clippings
 publish: true
 ---
+[کتاب‌های دیجیتال](_Index%20-%20Digital%20Books.md)
+
+داخل تبلت دارم و داخل ‌‌Bookfusion هم ذخیره کردم. 
+
 ## What's Inside
 
 1\. Career paths  

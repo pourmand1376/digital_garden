@@ -7,6 +7,8 @@ publish: true
 ---
 
 [Zettelkasten knowledge and info management • Zettelkasten Method](https://zettelkasten.de/)
+[Zettelkasten Method Obsidian - Zettelkasten](Zettelkasten%20Method%20Obsidian%20-%20Zettelkasten.md)
+
 
 how to take smart notes sonke ahrens [^1]
 
