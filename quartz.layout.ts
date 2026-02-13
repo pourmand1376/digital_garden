@@ -71,13 +71,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     //Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
-    Component.DesktopOnly(Component.Explorer({
+    Component.Explorer({
       filterFn: (node) => {
         // Show only one level of folders
         const depth = node.slug.split('/').filter(x => x && x !== 'index').length
         return depth <= 1 && node.slugSegment !== "tags"
       }
-    })),
+    }),
   ],
   right: [Component.Graph(
     {localGraph:  {depth:2, fontSize: 1.2,scale:2,}}
@@ -99,17 +99,18 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer({
+    Component.Explorer({
       filterFn: (node) => {
         // Show only one level of folders
         const depth = node.slug.split('/').filter(x => x && x !== 'index').length
         return depth <= 1 && node.slugSegment !== "tags"
       }
-    })),
+    }),
   ],
   right: [Component.Graph(
     {
       localGraph: {depth:2, fontSize: 1.2}
     }
-  ), Component.Backlinks()],
+  ), Component.DesktopOnly(Component.TableOfContents())
+],
 }
