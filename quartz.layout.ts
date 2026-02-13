@@ -8,10 +8,10 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.Flex({
       components: [
-        // {
-        //   Component: Component.Backlinks(),
-        //   align: "start",
-        // },
+        {
+          Component: Component.Backlinks(),
+          align: "start",
+        },
         {
           Component: Component.TagList(),
           align: "start",
@@ -74,7 +74,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.TableOfContents()),
     //Component.DesktopOnly(Component.RecentNotes({ showTags: false })),
     Component.DesktopOnly(Component.Explorer({
       filterFn: (node) => {
@@ -86,7 +85,10 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [Component.Graph(
     {localGraph:  {depth:2, fontSize: 1.2,scale:2,}}
-  ), Component.Backlinks()],
+  ), 
+  Component.DesktopOnly(Component.TableOfContents()),
+  //Component.Backlinks()
+],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
