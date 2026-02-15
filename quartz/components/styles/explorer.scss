@@ -1,6 +1,10 @@
 @use "../../styles/variables.scss" as *;
 
 @media all and ($mobile) {
+  .page {
+    overflow-x: hidden;
+  }
+  
   .page > #quartz-body {
     // Shift page position when toggling Explorer on mobile.
     & > :not(.sidebar.left:has(.explorer)) {
