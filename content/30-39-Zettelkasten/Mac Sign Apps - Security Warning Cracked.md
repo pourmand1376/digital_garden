@@ -32,3 +32,4 @@ Sometimes, even after those two, macOS might still block the app from execution 
 
 [mac](Index%20MacOS.md)
 [software](Index%20Softwares.md)
+[mac crack apps](کرک%20نرم%20افزارهای%20مک.md)

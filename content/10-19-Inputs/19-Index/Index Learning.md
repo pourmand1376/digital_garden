@@ -5,6 +5,7 @@ tags:
 aliases:
   - یادگیری
   - مهارت یادگیری
+  - learning
 publish: true
 title: موارد مرتبط با مهارت یادگیری
 ---
