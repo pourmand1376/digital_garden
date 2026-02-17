@@ -51,6 +51,11 @@ publish: true
       "name": "tags",
       "value": "clippings, movies",
       "type": "multitext"
+    },
+    {
+      "name": "rating",
+      "value": "",
+      "type": "number"
     }
   ],
   "triggers": [
