@@ -60,6 +60,7 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.ContentMeta({ showReadingTime: false, showComma: false }),
       condition: (page) => page.fileData.slug !== "index",
     }),
+    Component.FrontmatterList(),
     Component.Breadcrumbs({
       rootName: "خانه",
     }),
@@ -93,6 +94,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta({ showReadingTime: false, showComma: false }),
+    Component.FrontmatterList(),
   ],
   left: [
     Component.PageTitle(),
