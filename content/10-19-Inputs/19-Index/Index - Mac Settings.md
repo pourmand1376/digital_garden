@@ -9,6 +9,6 @@ aliases:
   - تنظیمات مک
   - تنظیمات نر‌م‌افزارهای مک
   - 
-title: mac settings
+title: تنظیمات مک
 publish: true
 ---
