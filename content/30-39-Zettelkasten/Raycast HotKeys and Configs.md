@@ -9,6 +9,8 @@ publish: true
 ---
 [mac settings](Index%20-%20Mac%20Settings.md)
 [Add Hyper Key](Change%20caps_lock%20to%20command+control+option%20(Hyper%20Key).md)
+[shortcuts](Index%20Keyboard%20Shortcuts.md)
+
 I don't enable hyper key via Raycast. It does have bug sometimes. 
 
 Show Clipboard History: Hyper + V

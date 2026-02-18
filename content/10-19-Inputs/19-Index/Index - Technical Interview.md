@@ -11,3 +11,4 @@ title: مصاحبه تکنیکال - الگوریتمی
 publish: true
 ---
 [interview](Index%20-%20Interview.md)
+[software](Index%20Softwares.md)
