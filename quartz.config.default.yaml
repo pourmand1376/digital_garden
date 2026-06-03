@@ -1,11 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: نوشته‌های امیر
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
-    provider: plausible
+    provider: goatcounter
+    websiteId: aprd-notes
   locale: fa-IR
   baseUrl: apourmand.ir
   ignorePatterns:
@@ -16,28 +17,28 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: Vazirmatn
+      body: Vazirmatn
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
+        light: "#f0f0f2" # Backg
+        lightgray: "#d8d8da" # Code Backg
+        gray: "#868889" # Unread nodes and subtitles
+        darkgray: "#202225" # Text
+        dark: "#202225" # Code text
+        secondary: "#027b1f" # Links, title, and current node
+        tertiary: "#185ecd" # Visited nodes
         highlight: rgba(143, 159, 169, 0.15)
         textHighlight: "#fff23688"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
+        light: "#202225" # Backg
+        lightgray: "#383b3d" # Code Backg
+        gray: "#686D82" # Unread nodes and subtitles
+        darkgray: "#f0f0f2" # Text
+        dark: "#f0f0f2" # Code text
+        secondary: "#a6e3a1" # Links, title, and current node
+        tertiary: "#89dceb" # Visited nodes
         highlight: rgba(143, 159, 169, 0.15)
         textHighlight: "#b3aa0288"
 plugins:
@@ -196,8 +197,11 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        Github: https://github.com/pourmand1376
+        Linkedin: https://www.linkedin.com/in/amir-pourmand
+        Telegram: https://t.me/pourmand_amir
+        Persian Blog: https://aprd.ir
+        English Blog: https://amirpourmand.ir
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
