@@ -1,3 +1,4 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "buildCommand": "rm -rf .quartz/plugins && npx quartz plugin install && npx quartz build"
 }
