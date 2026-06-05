@@ -79,8 +79,12 @@ function markDeadLinks(root: HtmlRoot, _slug: FullSlug, allFiles: ProcessedConte
       targetSlug.replace(/\/$/, ""), // remove trailing slash
       targetSlug + "index", // add index for folder links
       targetSlug.replace(/\/$/, "") + "/index", // folder/index form
-      "tags/" + targetSlug, // tag prefix form: "plugin" -> "tags/plugin"
     ]
+
+    // Add tag prefix form only if not already prefixed
+    if (!targetSlug.startsWith("tags/")) {
+      slugsToCheck.push("tags/" + targetSlug) // tag prefix form: "plugin" -> "tags/plugin"
+    }
 
     let isValid = false
     for (const checkSlug of slugsToCheck) {
