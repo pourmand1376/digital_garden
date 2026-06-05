@@ -113,19 +113,36 @@ body[data-slug="index"] blockquote[class="callout"][data-callout="tip"] {
   gap: 0.85rem;
 }
 
-.page .sidebar :is(.graph, .toc, .search, .explorer, .backlinks),
-.page .center .backlinks {
-  border: 1px solid color-mix(in srgb, var(--gray) 26%, transparent);
-  border-radius: 10px;
-  padding: 0.75rem;
-  background: color-mix(in srgb, var(--light) 92%, var(--lightgray));
+.page > #quartz-body .sidebar.left {
+  border-inline-end: 1px solid color-mix(in srgb, var(--gray) 24%, transparent);
 }
 
-/* If backlinks render under article, keep them as a side-style panel. */
+.page > #quartz-body .sidebar.right {
+  border-inline-start: 1px solid color-mix(in srgb, var(--gray) 24%, transparent);
+}
+
+/* Keep sidebar widgets visually simple (no boxes). */
+.page .sidebar :is(.graph, .toc, .search, .explorer, .backlinks),
+.page .center .backlinks {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* If backlinks render under article, keep them unboxed but aligned. */
 .page .center .backlinks {
   max-width: 22rem;
   margin-inline-start: auto;
   margin-top: 1rem;
+}
+
+@media all and ($mobile) {
+  .page > #quartz-body .sidebar.left,
+  .page > #quartz-body .sidebar.right {
+    border-inline: none;
+  }
 }
 
 .page hr {
