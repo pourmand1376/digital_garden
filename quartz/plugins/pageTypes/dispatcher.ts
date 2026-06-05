@@ -8,7 +8,6 @@ import {
   RelativeURL,
   isAbsoluteURL,
   pathToRoot,
-  resolveRelative,
   splitAnchor,
 } from "../../util/path"
 import { ProcessedContent, defaultProcessedContent } from "../vfile"
@@ -46,28 +45,62 @@ function addDeadLinkClass(elem: Element) {
   elem.properties.className = classList
 }
 
-function markDeadLinks(root: HtmlRoot, slug: FullSlug, allFiles: ProcessedContent[1]["data"][]) {
-  const knownTargets = new Set<RelativeURL>()
+function markDeadLinks(root: HtmlRoot, _slug: FullSlug, allFiles: ProcessedContent[1]["data"][]) {
+  // Build set of all valid slugs
+  const validSlugs = new Set<string>()
   for (const file of allFiles) {
-    if (!file.slug) continue
-    knownTargets.add(resolveRelative(slug, file.slug))
+    if (file.slug) {
+      validSlugs.add(file.slug)
+    }
   }
 
   visit(root, "element", (node) => {
     const elem = node as Element
     if (elem.tagName !== "a") return
 
-    const hrefValue = elem.properties.href
-    if (typeof hrefValue !== "string") return
+    const href = elem.properties.href
+    if (typeof href !== "string") return
 
-    const [hrefWithoutAnchor] = splitAnchor(hrefValue)
-    if (!hrefWithoutAnchor) return
-    if (isAbsoluteURL(hrefWithoutAnchor as RelativeURL)) return
-
+    // Skip external links and absolute URLs
     const classList = asClassList(elem.properties.className)
     if (classList.includes("external")) return
-    if (knownTargets.has(hrefWithoutAnchor as RelativeURL)) return
+    if (isAbsoluteURL(href as RelativeURL)) return
 
+    // Remove anchor and check if there's a path left
+    const [hrefWithoutAnchor] = splitAnchor(href)
+    if (!hrefWithoutAnchor) return
+
+    // Extract the target slug by removing relative path prefixes (./ ../ ../../ etc)
+    let targetSlug = hrefWithoutAnchor.replace(/^\.\//, "").replace(/^(\.\.\/)+/, "")
+
+    // Generate all possible slug forms to check
+    const slugsToCheck = [
+      targetSlug, // exact match
+      targetSlug.replace(/\/$/, ""), // remove trailing slash
+      targetSlug + "index", // add index for folder links
+      targetSlug.replace(/\/$/, "") + "/index", // folder/index form
+      "tags/" + targetSlug, // tag prefix form: "plugin" -> "tags/plugin"
+    ]
+
+    let isValid = false
+    for (const checkSlug of slugsToCheck) {
+      if (validSlugs.has(checkSlug)) {
+        isValid = true
+        break
+      }
+      // Also check if it matches the end of any slug at a path boundary
+      for (const slug of validSlugs) {
+        if (slug === checkSlug || slug.endsWith("/" + checkSlug)) {
+          isValid = true
+          break
+        }
+      }
+      if (isValid) break
+    }
+
+    if (isValid) return
+
+    // Mark as dead link
     addDeadLinkClass(elem)
     elem.tagName = "span"
     delete elem.properties.href
