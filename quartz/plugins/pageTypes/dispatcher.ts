@@ -2,14 +2,81 @@ import { QuartzEmitterPlugin, QuartzPageTypePluginInstance, TreeTransform } from
 import { QuartzComponent, QuartzComponentProps } from "../../components/types"
 import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
-import { FilePath, FullSlug, pathToRoot } from "../../util/path"
+import {
+  FilePath,
+  FullSlug,
+  RelativeURL,
+  isAbsoluteURL,
+  pathToRoot,
+  resolveRelative,
+  splitAnchor,
+} from "../../util/path"
 import { ProcessedContent, defaultProcessedContent } from "../vfile"
 import { write } from "../emitters/helpers"
 import { BuildCtx, trieFromAllFiles } from "../../util/ctx"
 import { StaticResources } from "../../util/resources"
 import { render } from "preact-render-to-string"
 import { fromHtml } from "hast-util-from-html"
-import { Root as HtmlRoot } from "hast"
+import { Element, Root as HtmlRoot } from "hast"
+import { visit } from "unist-util-visit"
+
+function asClassList(className: unknown): string[] {
+  if (className === undefined) {
+    return []
+  }
+
+  if (Array.isArray(className)) {
+    return className
+      .filter((value): value is string => typeof value === "string")
+      .flatMap((value) => value.split(/\s+/).filter(Boolean))
+  }
+
+  if (typeof className === "string") {
+    return className.split(/\s+/).filter(Boolean)
+  }
+
+  return []
+}
+
+function addDeadLinkClass(elem: Element) {
+  const classList = asClassList(elem.properties.className)
+  if (!classList.includes("dead-link")) {
+    classList.push("dead-link")
+  }
+  elem.properties.className = classList
+}
+
+function markDeadLinks(root: HtmlRoot, slug: FullSlug, allFiles: ProcessedContent[1]["data"][]) {
+  const knownTargets = new Set<RelativeURL>()
+  for (const file of allFiles) {
+    if (!file.slug) continue
+    knownTargets.add(resolveRelative(slug, file.slug))
+  }
+
+  visit(root, "element", (node) => {
+    const elem = node as Element
+    if (elem.tagName !== "a") return
+
+    const hrefValue = elem.properties.href
+    if (typeof hrefValue !== "string") return
+
+    const [hrefWithoutAnchor] = splitAnchor(hrefValue)
+    if (!hrefWithoutAnchor) return
+    if (isAbsoluteURL(hrefWithoutAnchor as RelativeURL)) return
+
+    const classList = asClassList(elem.properties.className)
+    if (classList.includes("external")) return
+    if (knownTargets.has(hrefWithoutAnchor as RelativeURL)) return
+
+    addDeadLinkClass(elem)
+    elem.tagName = "span"
+    delete elem.properties.href
+  })
+}
+
+const deadLinkTransform: TreeTransform = (root, slug, componentData) => {
+  markDeadLinks(root as HtmlRoot, slug, componentData.allFiles)
+}
 
 function getPageTypes(ctx: BuildCtx): QuartzPageTypePluginInstance[] {
   return (ctx.cfg.plugins.pageTypes ?? []) as unknown as QuartzPageTypePluginInstance[]
@@ -163,9 +230,10 @@ export const PageTypeDispatcher: QuartzEmitterPlugin<Partial<DispatcherOptions>>
       const allFiles = content.map((c) => c[1].data)
 
       // Collect tree transforms from all page type plugins
-      const treeTransforms: TreeTransform[] = pageTypes.flatMap(
-        (pt) => pt.treeTransforms?.(ctx) ?? [],
-      )
+      const treeTransforms: TreeTransform[] = [
+        ...pageTypes.flatMap((pt) => pt.treeTransforms?.(ctx) ?? []),
+        deadLinkTransform,
+      ]
 
       // Ensure trie is available for components that need folder hierarchy (e.g. FolderContent)
       ctx.trie ??= trieFromAllFiles(allFiles)
@@ -250,9 +318,10 @@ export const PageTypeDispatcher: QuartzEmitterPlugin<Partial<DispatcherOptions>>
       const allFiles = content.map((c) => c[1].data)
 
       // Collect tree transforms from all page type plugins
-      const treeTransforms: TreeTransform[] = pageTypes.flatMap(
-        (pt) => pt.treeTransforms?.(ctx) ?? [],
-      )
+      const treeTransforms: TreeTransform[] = [
+        ...pageTypes.flatMap((pt) => pt.treeTransforms?.(ctx) ?? []),
+        deadLinkTransform,
+      ]
 
       // Rebuild trie on partial emit to reflect file changes
       ctx.trie = trieFromAllFiles(allFiles)
