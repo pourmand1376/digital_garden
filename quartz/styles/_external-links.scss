@@ -111,11 +111,10 @@ a.external {
 
 
 
-// Source: https://github.com/CatCodeMe/catcodeme.github.io/blob/770f3f8d1f6849ef40bc06b4300a52b3aecfb551/quartz/styles/external-links.scss
-
 .dead-link {
-  padding: 0 0.1rem;
-  border-radius: 5px;
-  line-height: 1.4rem;
-  cursor: default;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color: #d97706;
+  background-color: var(--lightgray);
 }
