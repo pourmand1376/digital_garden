@@ -95,7 +95,7 @@ body::before {
 //   gap: 10px;
 // }
 // Specifically the first part of the index page with the moon
-[saved-theme="dark"] body[data-slug="index"] img[src="./moon-light.png"] {
+html[saved-theme="dark"] body[data-slug="index"] img[src*="moon-light.png"] {
   filter: invert(100%);
 }
 body[data-slug="index"] img {
@@ -103,7 +103,7 @@ body[data-slug="index"] img {
   filter: invert(0%);
 }
 
-body[data-slug="index"] blockquote[class="callout"][data-callout="tip"] {
+body[data-slug="index"] blockquote.callout[data-callout="tip"] {
   width: 50%;
 }
 
