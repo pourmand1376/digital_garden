@@ -22,25 +22,25 @@ configuration:
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#f0f0f2" # Backg
-        lightgray: "#d8d8da" # Code Backg
-        gray: "#868889" # Unread nodes and subtitles
-        darkgray: "#202225" # Text
-        dark: "#202225" # Code text
-        secondary: "#027b1f" # Links, title, and current node
-        tertiary: "#185ecd" # Visited nodes
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#faf4ed" # Rosé Pine Dawn: Base
+        lightgray: "#f2e9e1" # Rosé Pine Dawn: Overlay
+        gray: "#9893a5" # Rosé Pine Dawn: Muted
+        darkgray: "#464261" # Rosé Pine Dawn: Text
+        dark: "#464261" # Rosé Pine Dawn: Text
+        secondary: "#286983" # Rosé Pine Dawn: Pine
+        tertiary: "#907aa9" # Rosé Pine Dawn: Iris
+        highlight: "rgba(242, 233, 225, 0.5)" # Rosé Pine Dawn: Overlay
+        textHighlight: "#ea9d3488" # Rosé Pine Dawn: Gold
       darkMode:
-        light: "#202225" # Backg
-        lightgray: "#383b3d" # Code Backg
-        gray: "#686D82" # Unread nodes and subtitles
-        darkgray: "#f0f0f2" # Text
-        dark: "#f0f0f2" # Code text
-        secondary: "#a6e3a1" # Links, title, and current node
-        tertiary: "#89dceb" # Visited nodes
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#191724" # Rosé Pine: Base
+        lightgray: "#26233a" # Rosé Pine: Overlay
+        gray: "#6e6a86" # Rosé Pine: Muted
+        darkgray: "#e0def4" # Rosé Pine: Text
+        dark: "#e0def4" # Rosé Pine: Text
+        secondary: "#31748f" # Rosé Pine: Pine
+        tertiary: "#c4a7e7" # Rosé Pine: Iris
+        highlight: "rgba(64, 61, 82, 0.15)" # Rosé Pine: Highlight Med
+        textHighlight: "#f6c17788" # Rosé Pine: Gold
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
@@ -91,7 +91,7 @@ plugins:
     enabled: false
     order: 85
   - source: github:quartz-community/hard-line-breaks
-    enabled: false
+    enabled: true
     order: 90
   - source: github:quartz-community/ox-hugo
     enabled: false
