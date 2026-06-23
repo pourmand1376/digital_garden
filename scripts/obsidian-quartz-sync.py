@@ -7,6 +7,7 @@ config_default = "~/gitfolder/digital_garden/scripts/obsidian-quartz-sync.yml"
 
 ## Imports
 import os
+import re
 import sys
 from glob import glob
 import yaml
@@ -15,6 +16,10 @@ import logging
 import shutil
 import subprocess
 import argparse
+
+## Filename length limits
+MAX_FILENAME_WORDS = 8
+MAX_FILENAME_CHARS = 60
 # from pprint import pprint
 
 ## YAML loader that does NOT auto-convert date-shaped scalars to datetime.date.
@@ -43,6 +48,13 @@ def has_non_ascii_filename(filepath):
         return False
     except UnicodeEncodeError:
         return True
+
+
+def is_filename_too_long(filename):
+    '''Check if a filename stem exceeds MAX_FILENAME_WORDS words or MAX_FILENAME_CHARS chars.'''
+    stem, _ = os.path.splitext(filename)
+    words_in_stem = [w for w in re.split(r'[\s\-_]+', stem) if w]
+    return len(stem) > MAX_FILENAME_CHARS or len(words_in_stem) > MAX_FILENAME_WORDS
 
 def find_publish_mds(md, ignore):
     '''find md files with publish - returns (should_publish, assets, error_message)'''
@@ -249,7 +261,17 @@ def main(config_file, debug=False):
             if has_non_ascii_filename(md):
                 validation_errors.append(f"File with non-ASCII characters: {os.path.basename(md)}")
                 continue
-                
+
+            # Check filename length
+            if is_filename_too_long(os.path.basename(md)):
+                stem = os.path.splitext(os.path.basename(md))[0]
+                words = [w for w in re.split(r'[\s\-_]+', stem) if w]
+                validation_errors.append(
+                    f"Filename too long ({len(stem)} chars, {len(words)} words) — "
+                    f"max {MAX_FILENAME_CHARS} chars / {MAX_FILENAME_WORDS} words: {os.path.basename(md)}"
+                )
+                continue
+
             published += 1
             logging.info(f"✓ Will publish: {os.path.basename(md)}")
             # Calculate relative path from source directory to preserve folder structure
