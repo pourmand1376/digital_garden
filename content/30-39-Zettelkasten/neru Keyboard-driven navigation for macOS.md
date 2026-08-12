@@ -20,3 +20,6 @@ publish: true
 
 This wasn't working well. It didn't show all clickable places and it didn't let me click. 
 
+Update: The problem wasn't with the app but how I configured it. It is actually a pretty good app. In default mode, you have to actually hit `Shift+L` to click. The developer actually reached to me at [here](https://github.com/pourmand1376/.dotfiles/issues/2#issuecomment-4783036341) and gave me a config that worked. 
+
+[keyboard](Index%20-%20Keyboard.md)

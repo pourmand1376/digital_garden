@@ -7,7 +7,7 @@ aliases:
 title: Ignore Patterns for Syncthing
 publish: true
 ---
-[syncthing syncthing-macos Official frugal and native macOS Syncthing application bundle](syncthing%20syncthing-macos%20Official%20frugal%20and%20native%20macOS%20Syncthing%20application%20bundle.md)
+[syncthing-macos - native macOS Syncthing bundle](syncthing-macos%20-%20native%20macOS%20Syncthing%20bundle.md)
 [obsidian](Index%20-%20Obsidian.md)
 
 
@@ -38,6 +38,6 @@ General syncthing ignore pattern:
 .DS_Store
 ```
 
-[syncthing syncthing-macos Official frugal and native macOS Syncthing application bundle](syncthing%20syncthing-macos%20Official%20frugal%20and%20native%20macOS%20Syncthing%20application%20bundle.md)
+[syncthing-macos - native macOS Syncthing bundle](syncthing-macos%20-%20native%20macOS%20Syncthing%20bundle.md)
 [Index MacOS](Index%20MacOS.md)
 [Softwares I install](Softwares%20I%20install.md)

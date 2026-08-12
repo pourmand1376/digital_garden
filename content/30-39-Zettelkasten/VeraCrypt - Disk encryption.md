@@ -34,4 +34,4 @@ Note that veracrypt can have hidden volume that is virtually  impossible to unde
 [Macbook Things to install](Macbook%20Things%20to%20install.md)
 [software](Index%20Softwares.md)
 [Softwares I install](Softwares%20I%20install.md)
-[hashicorp vault A tool for secrets management, encryption as a service, and privileged access management](hashicorp%20vault%20A%20tool%20for%20secrets%20management,%20encryption%20as%20a%20service,%20and%20privileged%20access%20management.md)
+[hashicorp vault - Secrets management](hashicorp%20vault%20-%20Secrets%20management.md)

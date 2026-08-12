@@ -13,7 +13,7 @@ assets:
 
 ![](flashspace-image.webp)
 
-This is my configuration. You can see how I set my keyboard shortcuts. 
+This is my configuration. You can see how I set my [keyboard](Index%20-%20Keyboard.md) shortcuts. 
 
 I activate shortcuts with: Option + Workspace Letter
 Assign to a workspace: Option + Shift + Workspace Letter

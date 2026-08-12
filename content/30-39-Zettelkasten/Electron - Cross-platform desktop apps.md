@@ -13,5 +13,5 @@ calendar: "[[2026-05-21]]"
 aliases:
 publish: true
 ---
-[Tauri 2.0 - Create small, fast, secure, cross-platform applications](Tauri%202.0%20-%20Create%20small,%20fast,%20secure,%20cross-platform%20applications.md)
+[Tauri 2.0 - Cross-platform applications](Tauri%202.0%20-%20Cross-platform%20applications)
 [software](Index%20Softwares.md)

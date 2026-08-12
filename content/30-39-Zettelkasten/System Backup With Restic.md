@@ -14,5 +14,5 @@ calendar: "[[2026-05-17]]"
 aliases:
 publish: true
 ---
-[Data Backup Strategies Why the 3-2-1 Backup Strategy is the Best](Data%20Backup%20Strategies%20Why%20the%203-2-1%20Backup%20Strategy%20is%20the%20Best.md)
-[HomeServer-Guide HomeServer-Guide- Set up Ubuntu Server, SSH, CasaOS, Jellyfin, Tailscale, and more for secure storage, media streaming, and remote access](HomeServer-Guide%20HomeServer-Guide-%20Set%20up%20Ubuntu%20Server,%20SSH,%20CasaOS,%20Jellyfin,%20Tailscale,%20and%20more%20for%20secure%20storage,%20media%20streaming,%20and%20remote%20access.md)
+[The 3-2-1 Backup Strategy](The%203-2-1%20Backup%20Strategy.md)
+[HomeServer-Guide - Ubuntu Server Setup](HomeServer-Guide%20-%20Ubuntu%20Server%20Setup.md)

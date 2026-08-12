@@ -58,3 +58,4 @@ https://github.com/pourmand1376/.dotfiles/blob/9b47051f07000308a844778f97a3a672f
 [Karabinar Elements Settings](Karabinar%20Elements%20Settings.md)
 [FlashSpace Rules - Karabinar](FlashSpace%20Rules%20-%20Karabinar.md)
 [Change caps_lock to command+control+option (Hyper Key)](Change%20caps_lock%20to%20command+control+option%20(Hyper%20Key).md)
+[keyboard](Index%20-%20Keyboard.md)

@@ -24,7 +24,7 @@ Go into Service Mode: Alt + Shift + Semicolon
 - Reload Config: Escape
 
 
-[[Aerospace Bug for wrong focus on the same window]]
+[[Aerospace Bug - wrong focus on same window]]
 
 [[My Workspaces in Aerospace Window Manager]]
 [software](Index%20Softwares.md)

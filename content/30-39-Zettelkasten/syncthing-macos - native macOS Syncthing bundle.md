@@ -24,3 +24,6 @@ I'm tired of git-sync!
 [git-sync A sidecar app which clones a git repo and keeps it in sync with the upstream.](git-sync%20A%20sidecar%20app%20which%20clones%20a%20git%20repo%20and%20keeps%20it%20in%20sync%20with%20the%20upstream..md)
 [software](Index%20Softwares.md)
 [kavinsood yaos A zero-terminal, real-time sync engine powered by your own Cloudflare Worker.](kavinsood%20yaos%20A%20zero-terminal,%20real-time%20sync%20engine%20powered%20by%20your%20own%20Cloudflare%20Worker..md)
+
+> [!info]
+> Make sure you use global ignore files. and also make sure to add simple versioning or trash can as backup strategy. 

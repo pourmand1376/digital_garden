@@ -9,7 +9,7 @@ aliases:
 title: فهرست کلیدهای میانبر
 publish: true
 ---
-My most important keyboard shortcuts in every software should be:
+My most important [keyboard](Index%20-%20Keyboard.md) shortcuts in every software should be:
 
 Command + O -> Open files
 Command + P -> Open Commands 

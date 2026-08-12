@@ -14,3 +14,6 @@ calendar: "[[2026-01-25]]"
 aliases:
 publish: true
 ---
+### Incredible Links
+Also read [andrew-quinn.me/fzf/](https://andrew-quinn.me/fzf/)
+Also [fzf: Getting Started \| junegunn.choi.](https://junegunn.github.io/fzf/getting-started/)

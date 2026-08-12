@@ -19,6 +19,6 @@ R -> Read (pdf, fidibo)
 2 -> Projects 
 
 CVBNM - ERT
-These are the names of my workspaces. Their keyboard keys are very close. 
+These are the names of my workspaces. Their [keyboard](Index%20-%20Keyboard.md) keys are very close. 
 
 [software](Index%20Softwares.md)

@@ -16,3 +16,4 @@ publish: true
 [software](Index%20Softwares.md)
 [mac](Index%20MacOS.md)
 [Softwares I install](Softwares%20I%20install.md)
+[فهرست کلیدهای میانبر](Index%20Keyboard%20Shortcuts.md)

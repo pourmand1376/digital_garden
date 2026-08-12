@@ -10,7 +10,7 @@ created: 2024-01-01T12:00:00
 - **Shields.io** little interesting boxes
 - readme.so is a very good website for creating readme files.
 - Markdown is a superset of html.
-- use `kbd` for showing keyboard shortcuts. 
+- use `kbd` for showing [keyboard](Index%20-%20Keyboard.md) shortcuts. 
 - Details mark
 ![[Pasted image 20220617001132.png]]
 

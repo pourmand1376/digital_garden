@@ -7,4 +7,4 @@ aliases:
 title: Karabinar Elements Settings
 publish: true
 ---
-[[Index - Mac Settings]]
+[[Index - Mac Settings|تنظیمات مک]]
