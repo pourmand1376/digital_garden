@@ -99,8 +99,11 @@ plugins:
   - source: "@quartz-community/roam"
     enabled: false
     order: 92
+  # Disabled: this plugin overrides theme typography with its own defaults
+  # (Source Sans Pro / Schibsted Grotesk), clobbering the Vazirmatn fonts set
+  # in configuration.theme.typography. Keep off so the theme fonts apply.
   - source: "@quartz-community/quartz-fonts"
-    enabled: true
+    enabled: false
   - source: "@quartz-themes/core"
     enabled: false
     options:
