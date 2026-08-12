@@ -115,7 +115,7 @@ plugins:
   - source: github:quartz-community/favicon
     enabled: true
   - source: github:quartz-community/og-image
-    enabled: true
+    enabled: false
   - source: github:quartz-community/cname
     enabled: true
   - source: github:quartz-community/canvas-page
@@ -127,7 +127,15 @@ plugins:
   - source: github:quartz-community/tag-page
     enabled: true
   - source: github:quartz-community/explorer
+    enabled: false
+    layout:
+      position: left
+      priority: 50
+  # Link-based sidebar: index/MOC notes as top-level items, their backlinks as children.
+  - source: ./plugins-local/explorer-index
     enabled: true
+    options:
+      indexPrefix: "10-19-inputs/19-index/"
     layout:
       position: left
       priority: 50
