@@ -14,13 +14,13 @@ The projects are most actionable. The least are archives.
 
 - [[PARA Method for Life Management]]
 - [[Getting Things Done - GTD - Project]]
-- [[Areas in Life - PARA Method]]
+- [[Areas in Life - PARA Method|ناحیه‌های زندگی]]
 - [[Short-Term Projects vs Long-Term Areas in PARA]]
 - [[Resources - Collection of Information in PARA]]
 - [[Archive Notes in PARA System]]
 - [[Inbox Notes in NoteTaking - Quick Dirty]]
 - [[Folders for separations - PARA]]
-- [[Folders vs Organic Structures]]
+- [[Folders vs Organic Structures|فولدر یا ساختار ارگانیک]]
 - [[Do not Move files around]]
 
 I actually decided to not use Resources folder. 

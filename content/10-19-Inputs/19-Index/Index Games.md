@@ -5,6 +5,7 @@ tags:
 aliases:
   - بازی
   - game
+  - games
 title: Index Games
 publish: true
 ---
